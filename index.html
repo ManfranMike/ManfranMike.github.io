@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Michael Provan | Software Engineer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="StyleSheet.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="script.js"></script>
+</head>
+
+<body class="w3-light-grey">
+
+    <!-- Page Container -->
+    <div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+        <!-- The Grid -->
+        <div class="w3-row-padding">
+
+            <!-- Left Column -->
+            <div class="w3-third">
+
+                <div class="w3-white w3-text-grey w3-card-4">
+                    <div class="w3-display-container">
+                        <img src="img/head.png" style="width:100%" alt="Avatar">
+                        <div class="w3-display-bottomleft w3-container w3-text-black">
+                            <h2 class="w3-text-white">Michael Provan</h2>
+                        </div>
+                    </div>
+                    <div class="w3-container">
+                        <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-red"></i>Software Engineer</p>
+                        <p><i class="fa fa-map-marker fa-fw w3-margin-right w3-large w3-text-red"></i>Florida, USA</p>
+                        <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-red"></i>michael@mprovan.com</p>
+                        <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-red"></i>352.509.6644</p>
+                        <hr>
+
+                        <p class="w3-large"><b><i class="fa fa-code fa-fw w3-margin-right w3-text-red"></i>Skills</b></p>
+                        <p>HTML5/CSS</p>
+                        <div class="w3-light-grey w3-round-xlarge w3-small">
+                            <div class="w3-container w3-center w3-round-xlarge w3-red" style="height:20px;width:60%"></div>
+                        </div>
+                        <p>Javascript</p>
+                        <div class="w3-light-grey w3-round-xlarge w3-small">
+                            <div class="w3-container w3-center w3-round-xlarge w3-red" style="height:20px;width:45%"></div>
+                        </div>
+                        <p>C++</p>
+                        <div class="w3-light-grey w3-round-xlarge w3-small">
+                            <div class="w3-container w3-center w3-round-xlarge w3-red" style="height:20px;width:40%"></div>
+                        </div>
+                        <!-- <p>SQL</p>
+                        <div class="w3-light-grey w3-round-xlarge w3-small">
+                            <div class="w3-container w3-center w3-round-xlarge w3-red" style="height:20px;width:20%"></div>
+                        </div>
+                        <p>PHP</p>
+                        <div class="w3-light-grey w3-round-xlarge w3-small">
+                            <div class="w3-container w3-center w3-round-xlarge w3-red" style="height:20px;width:5%"></div>
+                        </div> -->
+                        <br>
+
+                        <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-red"></i>Languages</b></p>
+                        <p>English</p>
+                        <div class="w3-light-grey w3-round-xlarge">
+                            <div class="w3-round-xlarge w3-red" style="height:24px;width:100%"></div>
+                        </div>
+                        <!-- <p>Japanese</p>
+                        <div class="w3-light-grey w3-round-xlarge">
+                            <div class="w3-round-xlarge w3-red" style="height:24px;width:10%"></div>
+                        </div>
+                        <p>Spanish</p>
+                        <div class="w3-light-grey w3-round-xlarge">
+                            <div class="w3-round-xlarge w3-red" style="height:24px;width:5%"></div>
+                        </div> -->
+                        <br>
+                    </div>
+                </div><br>
+
+                <!-- End Left Column -->
+            </div>
+
+            <!-- Right Column -->
+
+            <!-- Tabs for Right Columns -->
+            <div class="w3-twothird w3-bar w3-light-grey">
+                <button class="w3-bar-item w3-button tablink w3-red" onclick="openTab(event, 'about');">About Me</button>
+                <button class="w3-bar-item w3-button tablink" onclick="openTab(event, 'projects');">Projects</button>
+                <button class="w3-bar-item w3-button tablink" onclick="openTab(event, 'classwork');">Classwork</button>
+                <button class="w3-bar-item w3-button tablink" onclick="openTab(event, 'experience');">Experience</button>
+            </div>
+
+            <!-- About Tab -->
+            <div id="about" class="w3-twothird mp-tab">
+
+                <!-- About Me Card -->
+                <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+                    <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-child fa-fw w3-margin-right w3-xxlarge w3-text-red"></i>Hello World,</h2>
+                    <div class="w3-container">
+                        <p>I am a programming student working towards a Bachelor's Degree at Santa Fe College.</p>
+                        <p>If you're interested in my past work or what I'm currently working on, you can navigate to the "Projects" tab. I've listed some of the projects I've done for school under the "Classwork" tab. Finally, if you're a potential employer or are just interested in my qualifications, you can visit the "Experience" tab.</p>
+                        <p>Should you like to contact me with any questions or would like to hire me, please email me at <a href="mailto:michael@mprovan.com">michael@mprovan.com</a> or give me a call at 352-509-6644.</p>
+                        <br />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Tab -->
+            <div id="projects" class="w3-twothird mp-tab" style="display:none;">
+
+                <!-- Current Projects -->
+                <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+                    <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-star-half-o fa-fw w3-margin-right w3-xxlarge w3-text-red"></i>Current Projects</h2>
+                    <div class="w3-container">
+                        <h5 class="w3-opacity"><b>ePortfolio Website</b></h5>
+                        <h6 class="w3-text-red"><i class="fa fa-calendar fa-fw w3-margin-right"></i>April 2017</h6>
+                        <p>Working on this website right here! Still need to add a lot of content and a few other things.</p>
+                        <a href="http://mprovan.com/" class="w3-button w3-grey w3-hover-red">Link</a>
+                        <hr>
+                    </div>
+                    <div class="w3-container">
+                        <h5 class="w3-opacity"><b>Game/App Showcase</b></h5>
+                        <h6 class="w3-text-red"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Spring 2017</h6>
+                        <p>I'd like to put together somewhere I can host games and other projects I work on, then have links to the items on it from this portfolio site.</p>
+                        <a href="" class="w3-button w3-grey w3-hover-red w3-disabled">Link</a>
+                        <br /><br />
+                    </div>
+                </div>
+
+                <!-- Past Projects -->
+                <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+                    <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-star fa-fw w3-margin-right w3-xxlarge w3-text-red"></i>Past Projects</h2>
+                    <div class="w3-container">
+                        <h5 class="w3-opacity"><b>Coming Soon </b><i class="fa fa-thumbs-up fa-fw w3-margin-right w3-text-red"></i></h5>
+                        <h6 class="w3-text-red"></h6>
+                        <br>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Classwork Tab -->
+            <div id="classwork" class="w3-twothird mp-tab" style="display:none;">
+
+                <!-- Notable Classwork -->
+                <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+                    <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-university fa-fw w3-margin-right w3-xxlarge w3-text-red"></i>Notable Class Projects</h2>
+                    <div class="w3-container">
+                        <h5 class="w3-opacity"><b>Coming Soon </b><i class="fa fa-thumbs-up fa-fw w3-margin-right w3-text-red"></i></h5>
+                        <h6 class="w3-text-red"></h6>
+                        <br>
+                    </div>
+                </div>
+
+                <!-- Other Classwork -->
+                <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+                    <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-pencil fa-fw w3-margin-right w3-xxlarge w3-text-red"></i>Other Classwork</h2>
+                    <div class="w3-container">
+                        <h5 class="w3-opacity"><b>Tech Article Reviews</b></h5>
+                        <h6 class="w3-text-red"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Spring 2017</h6>
+                        <p>Every month or so, we were asked to demonstrate and practice staying on top of current trends in our industry. We accomplished this by finding a recent, reliable article that was related to our field then writing a brief summary on said article. These reviews were then presented for peer review by classmates.</p>
+                        <a href="https://drive.google.com/open?id=1uwx9oeGe2DNOJnC6WqWyDjfoYJaPazzC7n6Cl3nQ2P0" class="w3-button w3-grey w3-hover-red">Link</a>
+                        <hr />
+                    </div>
+                    <div class="w3-container">
+                        <h5 class="w3-opacity"><b>Resume & Cover Letter</b></h5>
+                        <h6 class="w3-text-red"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Spring 2017</h6>
+                        <p>In this assignment, we were required to assemble a resume with an attached cover letter.</p>
+                        <p>I learned a lot about the latest standards and practices when it comes to writing resumes. This is a very important skill to have, despite the end product only being used briefly by a potential employer. You can check out the resume I created and submitted at the link below. If you are an employer and you'd like my actual updated resume, please email me at <a href="mailto:michael@mprovan.com">michael@mprovan.com</a>.</p>
+                        <a href="https://drive.google.com/open?id=1HeDIsxNvYJY7GGg7WRBWjCbYqowqiLaUVKZzpwM9Qtg" class="w3-button w3-grey w3-hover-red">Link</a>
+                        <hr />
+                    </div>
+                    <div class="w3-container">
+                        <h5 class="w3-opacity"><b>Technical Communications & Workplace Protocols Presentation</b></h5>
+                        <h6 class="w3-text-red"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Spring 2017</h6>
+                        <p>This was a research-based assignment in which we had to create an hour-long presentation for a non-IT audience based on the following topics:</p>
+                        <ul>
+                            <li>Professional Codes of Conduct</li>
+                            <li>Software Licensing</li>
+                            <li>Property Rights and Licensing</li>
+                            <li>Privacy and Encryption</li>
+                            <li>Legal Liability</li>
+                        </ul>
+                        <a href="https://drive.google.com/open?id=0Bz3yKbQoHu3zMzB0RlNXdjBWX0k" class="w3-button w3-grey w3-hover-red">Link</a>
+                        <hr />
+                    </div>
+                    <div class="w3-container">
+                        <h5 class="w3-opacity"><b>Whitepaper Review</b></h5>
+                        <h6 class="w3-text-red"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Spring 2017</h6>
+                        <p>In this assignment, we were given the instructions to find a whitepaper on the internet and write a review of the paper.</p>
+                        <a href="https://drive.google.com/open?id=1bTHI2Vvb-lErk7wrZUTmz9nCZzKZYNUOzAEllkXuMm0" class="w3-button w3-grey w3-hover-red">Link</a>
+                        <br /><br />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience Tab -->
+            <div id="experience" class="w3-twothird mp-tab" style="display:none;">
+
+                <!-- Education -->
+                <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+                    <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-graduation-cap fa-fw w3-margin-right w3-xxlarge w3-text-red"></i>Education</h2>
+                    <div class="w3-container">
+                        <h5 class="w3-opacity"><b>Santa Fe College</b></h5>
+                        <h6 class="w3-text-red"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2016 - <span class="w3-tag w3-red w3-round">Current</span></h6>
+                        <p>A.S. Programming & Analysis</p>
+                        <br>
+                    </div>
+                </div>
+
+                <!-- Work Experience -->
+                <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+                    <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-red"></i>Work Experience</h2>
+                    <div class="w3-container">
+                        <h5 class="w3-opacity"><b>Technology Specialist / OfficeMax</b></h5>
+                        <h6 class="w3-text-red"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Aug 2016 - <span class="w3-tag w3-red w3-round">Current</span></h6>
+                        <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+                        <br>
+                    </div>
+                </div>
+
+            </div><!-- End Right Column -->
+
+                <!-- End Grid -->
+            </div>
+
+        <!-- End Page Container -->
+    </div>
+
+    <footer class="w3-container w3-red w3-center w3-margin-top">
+        <p>Find me on social media.</p>
+        <a href="https://www.facebook.com/ManfranMike"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+        <a href="https://github.com/ManfranMike"><i class="fa fa-github w3-hover-opacity"></i></a>
+        <a href="http://stackoverflow.com/users/7805972"><i class="fa fa-stack-overflow w3-hover-opacity"></i></a>
+        <a href="https://twitter.com/mikeprovan"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+        <a href="https://www.linkedin.com/in/mjprovan/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+        <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    </footer>
+
+</body>
+</html>
