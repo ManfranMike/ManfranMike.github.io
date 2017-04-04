@@ -1,51 +1,134 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+﻿<!DOCTYPE html>
+<html>
 <head>
-<title>Greg's Gambits</title>
-<link href="greg.css" rel="stylesheet" type="text/css" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Greg's Gambits</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        html, body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Roboto", sans-serif
+        }
+
+        #myFooter {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
-<div id="container">
 
- <img src="images/superhero.jpg" width="120" height="120" class="floatleft" />
- <h1 id="logo"><em>Greg's Gambits | Play a Game </em></h1>
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+            <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+            <a href="index.html" class="w3-bar-item w3-button w3-theme-l1">GG</a>
+            <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Home</a>
+            <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
+            <a href="gregs_tales.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white w3-disabled">Greg's Tales</a>
+            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white w3-disabled">Contact</a>
+        </div>
+    </div>
 
-<p>&nbsp;</p>
-<div id="nav">
-  <p><a href="index.html">Home</a>
-  <a href="greg.html">About Greg</a>
-  <a href="play_games.html">Play a Game</a>
-  <a href="gregs_tales.html">Greg's Tales</a>
-  <a href="sign.html">Sign In</a>
-  <a href="contact.html">Contact Us</a></p>
-  <a href="aboutyou.html">Tell Greg About You</a>
-</div>
-<div id="content">
-<p>Menu of Games to play!
-<table width="90%"  border="0" cellpadding="5">
-  <tr>
-    <td width="50%">&nbsp; <a href="gregs_tales.html">Greg's Tales</a></td>
-    <td width="50%">&nbsp; <a href="gregs_fortune.html">Madame Vidalia Sees All!</a></td>
-  </tr>
-  <tr>
-    <td width="50%">&nbsp; <a href="greg_encoder.html">Secret Message Encoder</a></td>
-    <td width="50%">&nbsp; <a href="gregs_fortune2.html">Madame Vidalia Can Tell Your Fortune!</a></td>
-  </tr>
-  <tr>
-    <td width="50%">&nbsp; <a href="greg_encoder2.html">Unbreakable Message Encoder</a></td>
-    <td width="50%">&nbsp; <a href="tictactoe.html">Tic Tac Toe</a></td>
-  </tr>
-  <tr>
-    <td width="50%">&nbsp; <a href="betTheRoll.html">Rolling Dice</a></td>
-    <td width="50%">&nbsp; <a href="greg_maze.html">The Dark Dungeon (MAZE GAME)</a></td>
-  </tr>
-</table>
+    <!-- Sidebar -->
+    <nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" style="z-index:3;width:250px;margin-top:43px;" id="mySidebar">
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+            <i class="fa fa-remove"></i>
+        </a>
+        <h4 class="w3-bar-item"><b>Games</b></h4>
+        <a class="w3-bar-item w3-button w3-hover-black" href="gregs_tales.html">Greg's Tales</a>
+        <a class="w3-bar-item w3-button w3-hover-black" href="gregs_fortune.html">Madame Vidalia Sees All</a>
+        <a class="w3-bar-item w3-button w3-hover-black" href="gregs_fortune2.html">Madame Vidalia Can Tell Your Fortune</a>
+        <a class="w3-bar-item w3-button w3-hover-black" href="greg_encoder.html">Secret Message Encoder</a>
+        <a class="w3-bar-item w3-button w3-hover-black" href="greg_encoder2.html">Unbreakable Message Encoder</a>
+        <a class="w3-bar-item w3-button w3-hover-black" href="tictactoe.html">Tic Tac Toe</a>
+        <a class="w3-bar-item w3-button w3-hover-black" href="betTheRoll.html">Rolling Dice</a>
+        <a class="w3-bar-item w3-button w3-hover-black" href="greg_maze.html">The Dark Dungeon <span class="w3-tag w3-teal w3-round">New!</span></a>
+    </nav>
 
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-</div>
-<div id="footer">Copyright &copy; 2013 Greg's Gambits<br />
-<a href="mailto:michael.j.provan@sfcollege.edu">michael.j.provan@sfcollege.edu</a></div>
-</div>
+    <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+    <div class="w3-main" style="margin-left:250px">
+
+        <div class="w3-row w3-padding-64">
+            <div class="w3-twothird w3-container">
+                <h1 class="w3-text-teal">Games for Everyone</h1>
+                <p>Select a game to play!</p>
+                <h4 class=""><b>Games</b></h4>
+                <ul>
+                    <li><a class="w3-button w3-grey w3-hover-black w3-margin-bottom" href="gregs_tales.html">Greg's Tales</a></li>
+                    <li><a class="w3-button w3-grey w3-hover-black w3-margin-bottom" href="gregs_fortune.html">Madame Vidalia Sees All</a></li>
+                    <li><a class="w3-button w3-grey w3-hover-black w3-margin-bottom" href="gregs_fortune2.html">Madame Vidalia Can Tell Your Fortune</a></li>
+                    <li><a class="w3-button w3-grey w3-hover-black w3-margin-bottom" href="greg_encoder.html">Secret Message Encoder</a></li>
+                    <li><a class="w3-button w3-grey w3-hover-black w3-margin-bottom" href="greg_encoder2.html">Unbreakable Message Encoder</a></li>
+                    <li><a class="w3-button w3-grey w3-hover-black w3-margin-bottom" href="tictactoe.html">Tic Tac Toe</a></li>
+                    <li><a class="w3-button w3-grey w3-hover-black w3-margin-bottom" href="betTheRoll.html">Rolling Dice</a></li>
+                    <li><a class="w3-button w3-grey w3-hover-black w3-margin-bottom" href="greg_maze.html">The Dark Dungeon</a></li>
+                </ul>
+            </div>
+            <div class="w3-third w3-container">
+                <img src="images/superhero.jpg" alt="superhero" />
+                <!-- <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+                <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p> -->
+            </div>
+        </div>
+
+        <!-- Pagination
+        <div class="w3-center w3-padding-32">
+            <div class="w3-bar">
+                <a class="w3-button w3-black" href="#">1</a>
+                <a class="w3-button w3-hover-black" href="#">2</a>
+                <a class="w3-button w3-hover-black" href="#">3</a>
+                <a class="w3-button w3-hover-black" href="#">4</a>
+                <a class="w3-button w3-hover-black" href="#">5</a>
+                <a class="w3-button w3-hover-black" href="#">»</a>
+            </div>
+        </div>-->
+
+        <footer id="myFooter">
+            <div class="w3-container w3-theme-l2 w3-padding-32">
+                <h4>Copyright &copy; 2017 <a href="https://mprovan.com">Michael Provan</a></h4>
+                <p>Direct all inquiries to <a href="mailto:michael@mprovan.com">michael@mprovan.com</a></p>
+            </div>
+
+            <div class="w3-container w3-theme-l1">
+                <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+            </div>
+        </footer>
+
+        <!-- END MAIN -->
+    </div>
+
+    <script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+    </script>
+
 </body>
 </html>
