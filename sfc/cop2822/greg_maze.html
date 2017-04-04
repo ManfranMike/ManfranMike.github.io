@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Greg's Maze</title>
+
+    <link href="greg.css" rel="stylesheet" type="text/css" />
+
+    <script src="greg_maze.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <img src="images/superhero.jpg" width="120" height="120" class="floatleft" />
+        <h1 id="logo"><em>Greg's Gambits | The Dark Dungeon </em></h1>
+        <p>&nbsp;</p>
+        <div id="nav">
+            <p>
+                <a href="index.html">Home</a>
+                <a href="greg.html">About Greg</a>
+                <a href="play_games.html">Play a Game</a>
+                <a href="gregs_tales.html">Greg's Tales</a>
+                <a href="sign.html">Sign In</a>
+                <a href="contact.html">Contact Us</a>
+            </p>
+            <a href="aboutyou.html">Tell Greg About You</a>
+        </div>
+    </div>
+
+    <div id="content" style="width:1200px;">
+        
+
+        <div id="hud" align="center">
+            <span id="healthbar">HP: <span id="hp">3</span>/3</span>
+            <br /><span id="status">Good Luck</span>
+        </div>
+        <hr style="clear:both;" />
+
+        <p style="float:left;max-width:400px;">You have awoken deep within a dark dungeon. You don't remember how you got here, but you know you must escape somehow.
+        Make your way through the darkness, but mind the traps and monsters! If your health runs out, your corpse will remain here for eternity.
+        <br /><br />
+        Select the character that best represents you to get started!</p>
+        <p style="float:right;max-width:400px;">Notes: You can move one space at a time in any direction (diagonals, too). Not every playthrough is possible if you're unlucky. Such is life.</p>
+
+        <div id="startmenu" align="center">
+            <p>Select your character:</p><br />
+            <input type="image" src="images/swordman.svg" onclick="loadImages(0);" style="width:100px;" />
+            <input type="image" src="images/swordwoman.svg" onclick="loadImages(1);" style="width:100px;" />
+        </div>
+
+        <table align="center" style="min-width:300px;">
+            <tr id="row0"></tr>
+            <tr id="row1"></tr>
+            <tr id="row2"></tr>
+            <tr id="row3"></tr>
+            <tr id="row4"></tr>
+        </table>
+
+    </div>
+
+</body>
+<foot align ="center">
+    <p id="footer">copyright 2017 Michael Provan</p>
+    <p id="footer">Icons in maze made by the good people at http://game-icons.net distributable under CC BY 3.0</p>
+</foot>
+</html>

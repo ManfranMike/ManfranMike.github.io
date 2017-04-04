@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Rolling Dice</title>
+<link href="greg.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script src="betTheRoll.js"></script>
+
+</head>
+
+
+<body>
+<div id="container">
+ <img src="images/superhero.jpg" width="120" height="120" class="floatleft" />
+ <h1 id="logo"><em>Greg's Gambits | Rolling Dice </em></h1>
+<p>&nbsp;</p>
+<div id="nav">
+  <p><a href="index.html">Home</a>
+  <a href="greg.html">About Greg</a>
+  <a href="play_games.html">Play a Game</a>
+  <a href="gregs_tales.html">Greg's Tales</a>
+  <a href="sign.html">Sign In</a>
+  <a href="contact.html">Contact Us</a></p>
+  <a href="aboutyou.html">Tell Greg About You</a>
+</div>
+
+
+
+<div id="content">
+	<h2> Welcome to the DICE DEN!</h2>
+    <p>In this game, you and the computer will roll two dice. Whoever has the higher total wins! Doubles break ties!</p>
+    <p>Each round, both players will ante up $5 to the pot. If either player ever can't ante up, the game ends.</p>
+    <p>On odd-numbered turns, you will go first and be asked to wager first. You are allowed to wager nothing. Afterward, the computer will decide if he wants to call your bet, raise the bet, or fold.</p>
+    <p>Then the results are revealed and the pot goes to the winner, or carries over to the next round in case of a complete tie!</p>
+    <p>It might sound easy to beat a computer, but this computer sometimes feels risky and won't always act like you expect! He's not completely random, either, though!</p>
+    <p>He won't go down without a fight! Good luck!</p>
+	<hr />
+	<input type="button" id="pcRoll" value="Roll the Dice!" onclick="gameLoop();" />
+    <hr />
+    <h3>Final wallet totals will display here when you're done!</h3>
+    <p>Your wallet: $<span id="pWallet">50</span></p>
+    <p>COM's wallet: $<span id="cWallet">50</span></p>
+</div>
+
+
+<div id="footer">Copyright &copy; 2017 Greg's Gambits<br />
+<a href="mailto:michael.j.provan@sfcollege.edu">michael.j.provan@sfcollege.edu</a></div>
+</div>
+</body>
+</html>

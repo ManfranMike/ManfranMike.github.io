@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Greg's Gambits | Madame Vidalia Can Tell Your Fortune</title>
+<link href="greg.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script>
+function startFortune()
+{
+	var num = 0;
+	var fortune1 = "You will be eaten by a grue. ";
+	var fortune2 = "Life is not a struggle. It is a wiggle. ";
+	var fortune3 = "You will refresh this page to try another fortune. ";
+	var fortune4 = "You will give Mike an A on this assignment.";
+	var fortune5 = "The Man who codes a fish eats for a day, but the man who teaches a fish to code has a lot of time on his hands.";
+	var fortune6 = "Madame Vidalia cannot see the future right now... She's an onion... ";
+	var fortune7 = "You are doomed. Doomed to what? I'm not sure. ";
+	var fortune8 = "Greg isn't a lake. He's an ocean. ";
+	var fortune9 = "Your future isn't as random as this fortune. ";
+	var fortune10 = "Madame Vidalia is out to lunch at the moment. Please try again later. ";
+	
+	num = (Math.floor(Math.random() * 10)) + 1;
+	switch(num)
+	{
+	 case 1:
+		document.getElementById("content").innterHTML = fortune1;
+		break;
+	case 2:
+		document.getElementyById("content").innerHTML = fortune2;
+		break;
+	case 3:
+		document.getElementById("content").innerHTML = fortune3;
+		break;
+	case 4:
+		document.getElementById("content").innerHTML = fortune4;
+		break;
+	case 5:
+		document.getElementById("content").innerHTML = fortune5;
+		break;
+	case 6:
+		document.getElementById("content").innerHTML = fortune6;
+		break;
+	case 7:
+		document.getElementById("content").innerHTML = fortune7;
+		break;
+	case 8:
+		document.getElementById("content").innerHTML = fortune8;
+		break;
+	case 9:
+		document.getElementById("content").innerHTML = fortune9;
+		break;
+	case10:
+		document.getElementById("content").innerHTML = fortune10;
+		break;
+	}
+}
+</script>
+</head>
+<body>
+<div id="container">
+
+ <img src="images/superhero.jpg" width="120" height="120" class="floatleft" />
+ <h1 id="logo"><em>Madame Vidalia Can Tell Your Fortune </em></h1>
+  
+<h2 align="center"><em> Ask Madame Vidalia for your fortune, if you dare!</em></h2>
+
+<p>&nbsp;</p>
+<div id="nav">
+  <p><a href="index.html">Home</a>
+  <a href="greg.html">About Greg</a>
+  <a href="play_games.html">Play a Game</a>
+  <a href="gregs_tales.html">Greg's Tales</a>
+  <a href="sign.html">Sign In</a>
+  <a href="contact.html">Contact Us</a></p>
+  <a href="aboutyou.html">Tell Greg About You</a>
+</div>
+<div id="content">
+	 <p class="floatright">Madame Vidalia<br /><br />
+	 <img src ="images/onions.jpg" /></p>
+	 <p>&nbsp;</p>
+	 <p><input type="button" value = "Summon the spirits!" onclick="startFortune();" /></p>
+	 <p>&nbsp;</p>
+</div>
+<div id="footer">Copyright &copy; 2013 Greg's Gambits<br />
+<a href="mailto:michael.j.provan@sfcollege.edu">michael.j.provan@sfcollege.edu</a></div>
+</div>
+</body>
+</html>

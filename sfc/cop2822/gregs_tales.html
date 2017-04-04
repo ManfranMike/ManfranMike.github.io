@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Greg's Gambits | Greg's Tales</title>
+<link href="greg.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="text/javascript">
+	function start_Game()
+	{
+		var gender = "boy";
+		var city = " ";
+		var monster = " ";
+		var food = " ";
+		var drink = " ";
+		numYears = prompt("Enter a number greater than 0: ");
+		gender = prompt("Is the story about a boy or a girl? ");
+			letter = gender.charAt(0);
+			gender = (letter == "b" || letter == "B")?"boy":"girl";
+		pronoun = (gender == "boy")?"he":"she";
+		name = prompt("Enter the name of the hero: ");
+		city = prompt("Enter the name of a city: ");
+		monster = prompt("Enter a type of monster: ");
+		food = prompt("Enter a food you like: ");
+		drink = prompt("Enter a drink you like: ");
+		
+		document.getElementById('content').innerHTML = 
+		("<p>Once upon a time, about " + numYears + " years ago, there was a " + gender + " named " + name + ". " + name + " lived in a small cabin in the woods just outside " + city + " limits.</p><p>" + name + " enjoyed walking in the woods every day until... One day " + pronoun + " came upon a " + monster + " sitting on a log eating a " + food + ".</p><p>The " + monster + " jumped up, spilling his " + drink + ". " + name + " ran home as fast as " + pronoun + " could but the " + monster + " followed and ...</p><br /><br /><h3>What happened? You decide!</h3><br /><p>Ending 1: The " + monster + " and " + name + " became best friends and lived in " + name + "'s house happily ever after.</p><p>Ending 2: The " + monster + " overpowered " + name + " and gobbled down all the " + food + " and " + drink + " in " + name + "'s refrigerator.</p><p>Ending 3: " + name + " screamed mean things at the " + monster + ", causing the " + monster + " to turn and run back to the woods, never to be seen again.</p><br /><br />");
+		
+	}
+
+		function start_Game2()
+	{		
+		var name2 = " ";
+		var name3 = " ";
+		var country = " ";
+		var noun1 = " ";
+		var noun2 = " ";
+		var noun3 = " ";
+		var topping = " ";
+		var color = " ";
+		var noun4 = " ";
+		numYears2 = prompt("Enter a number greater than 0: ");
+		name2 = prompt("Enter the name of the scientist: ");
+		name3 = prompt("Enter the name of another scientist: ");
+		country = prompt("Enter a country you would like to travel to: ");
+		noun1 = prompt("Enter an object that you use every day: ");
+		noun2 = prompt("What is your favorite candy? ");
+		noun3 = prompt("What is your favorite animal? ");
+		dessert = prompt("What is your favorite desert? ");
+		color = prompt("What is your favoite color? ");
+		tv = prompt("Enter a TV show: ");
+		num1 = prompt("Enter a number: ");
+		num2 = prompt("Enter a second number: ");
+		answer=(num1*num2);
+		answerWrong=(num1/num2);
+		
+		document.getElementById('content').innerHTML = 	("<p>This story takes place in the future, " + numYears2 + " years into the future to be exact. The famous scientist, " + name2 + ", had been working on crazy experiments combining a " + noun1 + " and " + noun2 + " and to create a new source of energy for the country, " + country + ".</p><p>" + name2 + " just could not figure out the correct equations and the proper variables. After dozens and dozens of failed attempts, " + name2 + " enlisted the brains of " + name3 + " to help start over and create a new and more powerful source of energy. They decided to keep the previous two variables, a " + noun1 + " and " + noun2 + ", but decided to add a 3rd even stronger ingredient, the all mighty " + noun3 + ".</p><p>" + name3 + " then solved the equation, realizing that " + num1 + " multiplied by " + num2 + " is actually " + answer + " and not " + answerWrong + " like " + name2 + " had originally thought. Finally, with a touch of " + dessert + ", " + color + " food coloring, and countless hours of '" + tv + "', the scientific duo successfully created a powerful new type of energy that will run " + country + " for another " + numYears2 + " years to come.  Atleast as long as '" + tv + "' doesn't end!</p><br /><br />");
+	}	
+</script>
+
+</head>
+<body>
+<div id="container">
+
+ <img src="images/superhero.jpg" width="120" height="120" class="floatleft" />
+ <h1 id="logo"><em>Greg's Gambits </em></h1>
+  
+<h2 align="center"><em> For this game, you will create a story by entering words when prompted. The Story will be different everytime you play!</em></h2>
+
+<p>&nbsp;</p>
+<div id="nav">
+  <p><a href="index.html">Home</a>
+  <a href="greg.html">About Greg</a>
+  <a href="play_games.html">Play a Game</a>
+  <a href="gregs_tales.html">Greg's Tales</a>
+  <a href="sign.html">Sign In</a>
+  <a href="contact.html">Contact Us</a></p>
+  <a href="aboutyou.html">Tell Greg About You</a>
+</div>
+<div id="content">
+ <input type="button" value = "Click to Begin" onclick="start_Game()" /></button>
+ 
+ <p><input type="button" value = "Click to Begin Story 2" onclick="start_Game2()" /></button></p>
+</div>
+<div id="footer">Copyright &copy; 2013 Greg's Gambits<br />
+<a href="mailto:michael.j.provan@sfcollege.edu">michael.j.provan@sfcollege.edu</a></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Secret Message Encoder</title>
+<link href="greg.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+ function encodeIt()
+ {
+	document.getElementById("message").innerHTML = ("<h2>&nbsp;</h2>");
+	var msg = prompt("Enter your message." , " ");
+	var newmsg = " ";
+	var upCaseCode = 155;
+	var newCode = 0;
+	var lowCaseCode = 219;
+	var specialCode = 3;
+ //the loop encodes each letter in the message string
+	for (var j = 0; j < msg.length; j++)
+	{
+		//check for upppercase letters and encode them
+		if ((msg.charCodeAt(j)>=65) && (msg.charCodeAt(j)<=90))
+		{
+		newcode = (upCaseCode - msg.charCodeAt(j));
+		}
+		else
+		//check for lowercase letters and encode them
+			if ((msg.charCodeAt(j)>=97) &&(msg.charCodeAt(j)<=122))
+			{
+				newcode = (lowCaseCode - msg.charCodeAt(j));
+			}
+			else
+			//check for numbers and special characters and encode them
+			if (((msg.charCodeAt(j) > 90) && (msg.charCodeAt(j) < 97)) || (msg.charCodeAt(j) < 65))
+			{
+				newcode = (msg.charCodeAt(j) + specialCode);
+			}
+	//add each encoded character to the new message
+	newmsg = newmsg + " " + String.fromCharCode(newcode);
+	}
+	//display the encoded message on the web page
+	document.getElementById("secret").innerHTML = ("<h2>" + newmsg + "</h2>");
+	//decide if original message should be shown
+	var choice = prompt("Do you want the original message displayed? Yes or No?", " ");
+	if ((choice.charAt(0) == 'y') || (choice.charAt(0) == 'Y'))
+	{
+		document.getElementById("message").innerHTML = ("<h2>" + msg + "</h2>");
+	}
+ }
+
+
+</script>
+</head>
+<body>
+<div id="container">
+
+ <img src="images/superhero.jpg" width="120" height="120" class="floatleft" />
+ <h1 id="logo"><em>Greg's Gambits | Encode a Message </em></h1>
+
+<p>&nbsp;</p>
+<div id="nav">
+  <p><a href="index.html">Home</a>
+  <a href="greg.html">About Greg</a>
+  <a href="play_games.html">Play a Game</a>
+  <a href="gregs_tales.html">Greg's Tales</a>
+  <a href="sign.html">Sign In</a>
+  <a href="contact.html">Contact Us</a></p>
+  <a href="aboutyou.html">Tell Greg About You</a>
+</div>
+<div id="content">
+	 <h2>Write A Message and Encode It</h1>
+<p><input type="button" id="encode" value="Enter your message" onclick="encodeIt();" /></p>
+  <table cellpadding="2" width = "90%" align = "center" border="1">
+    <tr> <td align="center" id="secret"><p>encoded message</p></td> </tr> 
+	<tr> <td align="center" id="message">&nbsp;</td> </tr>  </table>
+</div>
+<div id="footer">Copyright &copy; 2013 Greg's Gambits<br />
+<a href="mailto:michael.j.provan@sfcollege.edu">michael.j.provan@sfcollege.edu</a></div>
+</div>
+</body>
+</html>

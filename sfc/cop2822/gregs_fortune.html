@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Greg's Gambits | Madame Vadoma Sees All</title>
+<link href="greg.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script>
+function startFortune()
+{
+	var num = 0;
+	var question = " ";
+	var fortune1 = "Absolutely ";
+	var fortune2 = "No way ";
+	var fortune3 = "Probably";
+	var fortune4 = "Doubtful";
+	var fortune5 = "Could be";
+	var fortune6 = "Madame Vidalia cannot answer such a question. ";
+	var fortune7 = "You must find the answer within yourself. ";
+	var fortune8 = "Yes, of course! ";
+	var fortune9 = "You don't really believe this works, do you? ";
+	var fortune10 = "Madame Vidalia wonders about that too. ";
+	
+	num = (Math.floor(Math.random() * 10)) + 1;
+	question = prompt("What is your question? ", " ");
+	switch(num)
+	{
+	 case 1:
+		document.getElementById("content").innterHTML = fortune1;
+		break;
+	case 2:
+		document.getElementyById("content").innerHTML = fortune2;
+		break;
+	case 3:
+		document.getElementById("content").innerHTML = fortune3;
+		break;
+	case 4:
+		document.getElementById("content").innerHTML = fortune4;
+		break;
+	case 5:
+		document.getElementById("content").innerHTML = fortune5;
+		break;
+	case 6:
+		document.getElementById("content").innerHTML = fortune6;
+		break;
+	case 7:
+		document.getElementById("content").innerHTML = fortune7;
+		break;
+	case 8:
+		document.getElementById("content").innerHTML = fortune8;
+		break;
+	case 9:
+		document.getElementById("content").innerHTML = fortune9;
+		break;
+	case10:
+		document.getElementById("content").innerHTML = fortune10;
+		break;
+	}
+}
+</script>
+</head>
+<body>
+<div id="container">
+
+ <img src="images/superhero.jpg" width="120" height="120" class="floatleft" />
+ <h1 id="logo"><em>Madame Vidalia Sees All </em></h1>
+  
+<h2 align="center"><em> Ask Madame Vidalia anything that you are worried about</em></h2>
+
+<p>&nbsp;</p>
+<div id="nav">
+  <p><a href="index.html">Home</a>
+  <a href="greg.html">About Greg</a>
+  <a href="play_games.html">Play a Game</a>
+  <a href="gregs_tales.html">Greg's Tales</a>
+  <a href="sign.html">Sign In</a>
+  <a href="contact.html">Contact Us</a></p>
+  <a href="aboutyou.html">Tell Greg About You</a>
+</div>
+<div id="content">
+	 <p class="floatright">Madame Vidalia<br /><br />
+	 <img src ="images/onions.jpg" /></p>
+	 <p>&nbsp;</p>
+	 <p><input type="button" value = "Ask your question" onclick="startFortune();" /></p>
+	 <p>&nbsp;</p>
+</div>
+<div id="footer">Copyright &copy; 2013 Greg's Gambits<br />
+<a href="mailto:michael.j.provan@sfcollege.edu">michael.j.provan@sfcollege.edu</a></div>
+</div>
+</body>
+</html>

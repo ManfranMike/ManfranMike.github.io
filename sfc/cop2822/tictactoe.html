@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Tic Tac Toe</title>
+<link href="greg.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+
+	function getColor1()
+	{if (document.getElementById("x1y1").value == "x" || document.getElementById("x1y1").value == "X")
+	{document.getElementById("x1y1").style.background="yellow";}
+	else
+	{document.getElementById("x1y1").style.background="orange";}}
+	
+	function getColor2()
+	{if (document.getElementById("x1y2").value == "x" || document.getElementById("x1y2").value == "X")
+	{document.getElementById("x1y2").style.background="yellow";}
+	else
+	{document.getElementById("x1y2").style.background="orange";}}
+	
+	function getColor3()
+	{if (document.getElementById("x1y3").value == "x" || document.getElementById("x1y3").value == "X")
+	{document.getElementById("x1y3").style.background="yellow";}
+	else
+	{document.getElementById("x1y3").style.background="orange";}}
+	
+	function getColor4()
+	{if (document.getElementById("x2y1").value == "x" || document.getElementById("x2y1").value == "X")
+	{document.getElementById("x2y1").style.background="yellow";}
+	else
+	{document.getElementById("x2y1").style.background="orange";}}
+	
+	function getColor5()
+	{if (document.getElementById("x2y2").value == "x" || document.getElementById("x2y2").value == "X")
+	{document.getElementById("x2y2").style.background="yellow";}
+	else
+	{document.getElementById("x2y2").style.background="orange";}}
+	
+	function getColor6()
+	{if (document.getElementById("x2y3").value == "x" || document.getElementById("x2y3").value == "X")
+	{document.getElementById("x2y3").style.background="yellow";}
+	else
+	{document.getElementById("x2y3").style.background="orange";}}
+	
+	function getColor7()
+	{if (document.getElementById("x3y1").value == "x" || document.getElementById("x3y1").value == "X")
+	{document.getElementById("x3y1").style.background="yellow";}
+	else
+	{document.getElementById("x3y1").style.background="orange";}}
+	
+	function getColor8()
+	{if (document.getElementById("x3y2").value == "x" || document.getElementById("x3y2").value == "X")
+	{document.getElementById("x3y2").style.background="yellow";}
+	else
+	{document.getElementById("x3y2").style.background="orange";}}
+	
+	function getColor9()
+	{if (document.getElementById("x3y3").value == "x" || document.getElementById("x3y3").value == "X")
+	{document.getElementById("x3y3").style.background="yellow";}
+	else
+	{document.getElementById("x3y3").style.background="orange";}}
+</script>
+</head>
+<body>
+<div id="container">
+
+ <img src="images/superhero.jpg" width="120" height="120" class="floatleft" />
+ <h1 id="logo"><em>Greg's Gambits | Tic Tac Toe </em></h1>
+
+<p>&nbsp;</p>
+<div id="nav">
+  <p><a href="index.html">Home</a>
+  <a href="greg.html">About Greg</a>
+  <a href="play_games.html">Play a Game</a>
+  <a href="gregs_tales.html">Greg's Tales</a>
+  <a href="sign.html">Sign In</a>
+  <a href="contact.html">Contact Us</a></p>
+  <a href="aboutyou.html">Tell Greg About You</a>
+</div>
+<div id="content">
+	<table>
+	<tr>This is Tic Tac Toe! Two players take turns filling in the squares with an X or O, respectively. The first to a row of three wins!<br /></tr>
+	<tr><br /></tr>
+	<tr>
+		<td><input type="text" id="x1y1" value="" size = "5" maxlength = "1"  /><input type="button" id = "1" value = "ok" onclick = "getColor1()"/></td>	
+		<td><input type="text" id="x1y2" value="" size = "5" maxlength = "1" /><input type="button" value = "ok" onclick = "getColor2()" /></td>	
+		<td><input type="text" id="x1y3" value="" size = "5" maxlength = "1" /><input type="button" value = "ok" onclick = "getColor3()" /></td>
+	</tr>
+
+	</tr>
+		<td><input type="text" id="x2y1" value="" size = "5" maxlength = "1" /><input type="button" value = "ok" onclick = "getColor4()" /></td>	
+		<td><input type="text" id="x2y2" value="" size = "5" maxlength = "1" /><input type="button" value = "ok" onclick = "getColor5()" /></td>	
+		<td><input type="text" id="x2y3" value="" size = "5" maxlength = "1" /><input type="button" value = "ok" onclick = "getColor6()" /></td>
+	</tr>
+
+	</tr>
+		<td><input type="text" id="x3y1" value="" size = "5" maxlength = "1" /><input type="button" value = "ok" onclick = "getColor7()" /></td>	
+		<td><input type="text" id="x3y2" value="" size = "5" maxlength = "1" /><input type="button" value = "ok" onclick = "getColor8()" /></td>	
+		<td><input type="text" id="x3y3" value="" size = "5" maxlength = "1" /><input type="button" value = "ok" onclick = "getColor9()" /></td>
+	</tr>
+
+</table>
+</div>
+<div id="footer">Copyright &copy; 2017 Greg's Gambits<br />
+<a href="mailto:michael.j.provan@sfcollege.edu">michael.j.provan@sfcollege.edu</a></div>
+</div>
+</body>
+</html>
