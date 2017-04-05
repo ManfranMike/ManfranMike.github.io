@@ -14,11 +14,12 @@
         }
 
         #myFooter {
-            width:100%;
+            width: 100%;
             position: absolute;
             bottom: 0;
         }
     </style>
+    <script src="greg_boggle.js"></script>
 </head>
 <body>
 
@@ -57,20 +58,61 @@
     <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
     <div class="w3-main" style="margin-left:250px">
 
-        <div class="w3-row w3-padding-64">
-            <div class="w3-twothird w3-container">
-                <h1 class="w3-text-teal">Games for Everyone</h1>
-                <p>This is a website made for hosting a variety of games made for my first Javascript programming course at Santa Fe College.</p>
-                <p>Select a game to the left to check them out. I recommend "The Dark Dungeon", it's my favorite and the one I'm most proud of right now.</p>
+        <div id="game" class="w3-margin-left w3-margin-right w3-padding-64 w3-center">
+            
+            <div id="title">
+                <h3>Welcome to</h3>
+                <b class="w3-xxxlarge w3-bold w3-round w3-bottombar w3-orange w3-badge">BOGGLE</b>
+                <hr />
             </div>
-            <div class="w3-third w3-container">
-                <img src="images/superhero.jpg" alt="superhero" />
-                <!-- <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-                <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p> -->
+            <div id="start" class="w3-margin-bottom">
+                <button id="startbut" class="w3-button w3-round-xlarge w3-xlarge w3-black" onclick="startGame(this);">Start Game</button>
+                <br />
+                <span id="timer" class="w3-tag w3-teal w3-xlarge">120</span>
             </div>
+
+            <div id="thirds" class="w3-row">
+                <div id="leftcard" class="w3-third w3-card-4 w3-light-grey">
+                    <b class="w3-tag w3-green w3-large">Accepted Words:</b>
+                    <div id="goodwords">
+                    </div>
+                </div>
+
+                <div id="midcard" class="w3-third w3-card w3-leftbar w3-rightbar">
+                    <button class="w3-button w3-green w3-margin w3-round">Submit Word</button>
+                    <table id="bogglegame" class="w3-table-all w3-centered w3-xxxlarge w3-margin-bottom">
+                        <tr>
+                            <td class="w3-border">&nbsp;</td>
+                            <td class="w3-border">&nbsp;</td>
+                            <td class="w3-border">&nbsp;</td>
+                            <td class="w3-border">&nbsp;</td>
+                            <td class="w3-border">&nbsp;</td>
+                            <td class="w3-border">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="w3-hover-grey w3-border">&nbsp;</td>
+                            <td class="w3-hover-grey w3-border">&nbsp;</td>
+                            <td class="w3-hover-grey w3-border">&nbsp;</td>
+                            <td class="w3-hover-grey w3-border">&nbsp;</td>
+                            <td class="w3-hover-grey w3-border">&nbsp;</td>
+                            <td class="w3-hover-grey w3-border">&nbsp;</td>
+                        </tr>
+                    </table>
+                    <p class="w3-large">Score: <b id="score" class="w3-tag w3-yellow">000</b></p>
+                </div>
+
+                <div id="rightcard" class="w3-third w3-card-4 w3-light-grey">
+                    <b class="w3-tag w3-red w3-large">Invalid Words:</b>
+                    <div id="badwords">
+                    </div>
+                </div>
+            </div>
+
+
+
         </div>
 
-        <!-- Pagination 
+        <!-- Pagination
         <div class="w3-center w3-padding-32">
             <div class="w3-bar">
                 <a class="w3-button w3-black" href="#">1</a>
