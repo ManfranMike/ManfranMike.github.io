@@ -79,7 +79,7 @@
                 </div>
 
                 <div id="midcard" class="w3-third w3-card w3-leftbar w3-rightbar">
-                    <button class="w3-button w3-green w3-margin w3-round">Submit Word</button>
+                    <button class="w3-button w3-green w3-margin w3-round" onclick="submitWord();">Submit Word</button>
                     <table id="bogglegame" class="w3-table-all w3-centered w3-xxxlarge w3-margin-bottom">
                         <tr>
                             <td class="w3-border">&nbsp;</td>
@@ -90,15 +90,15 @@
                             <td class="w3-border">&nbsp;</td>
                         </tr>
                         <tr>
-                            <td class="w3-hover-grey w3-border">&nbsp;</td>
-                            <td class="w3-hover-grey w3-border">&nbsp;</td>
-                            <td class="w3-hover-grey w3-border">&nbsp;</td>
-                            <td class="w3-hover-grey w3-border">&nbsp;</td>
-                            <td class="w3-hover-grey w3-border">&nbsp;</td>
-                            <td class="w3-hover-grey w3-border">&nbsp;</td>
+                            <td class="w3-hover-grey w3-border" onclick="setLetter(this);">&nbsp;</td>
+                            <td class="w3-hover-grey w3-border" onclick="setLetter(this);">&nbsp;</td>
+                            <td class="w3-hover-grey w3-border" onclick="setLetter(this);">&nbsp;</td>
+                            <td class="w3-hover-grey w3-border" onclick="setLetter(this);">&nbsp;</td>
+                            <td class="w3-hover-grey w3-border" onclick="setLetter(this);">&nbsp;</td>
+                            <td class="w3-hover-grey w3-border" onclick="setLetter(this);">&nbsp;</td>
                         </tr>
                     </table>
-                    <p class="w3-large">Score: <b id="score" class="w3-tag w3-yellow">000</b></p>
+                    <p class="w3-large">Score: <b id="score" class="w3-tag w3-yellow">??</b></p>
                 </div>
 
                 <div id="rightcard" class="w3-third w3-card-4 w3-light-grey">
