@@ -9,11 +9,8 @@ var goodWords = [];
 var badWords = [];
 var score = 0;
 
-// Is called each function inside each time update is called. Countdown always happens last.
+// each function inside is called each time update is called. Countdown always happens last.
 function update(){
-    
-
-
     countdown();
 }
 
@@ -28,6 +25,7 @@ function startGame(startButton) {
         endGame();
         s.innerHTML = "Reset Game";
         isDone = true;
+        isPlaying = false;
     }
     else if (!isPlaying) {
         isPlaying = true;
@@ -80,16 +78,17 @@ function setWords(x) {
         document.getElementById("bogglegame").rows[1].cells[i].innerHTML = scramble[i];
     }
 
+    document.getElementById("pos").innerHTML = words.length-1;
 }
 
 // Set letter from bottom to leftmost top cell when clicked on.
 function setLetter(x) {
-    if (this.innerHTML == "&nbsp")  //If clicked square is blank, do nothing
+    if (!isPlaying)
         return false;
-
+    
     // Cycle through the top row, if it's blank, fill it in then break the loop, else do nothing.
     for (i = 0; i < document.getElementById("bogglegame").rows[0].cells.length; i++) {
-        if (document.getElementById("bogglegame").rows[0].cells[i].innerHTML == "&nbsp;") {
+        if (document.getElementById("bogglegame").rows[0].cells[i].innerHTML == "_") {
             document.getElementById("bogglegame").rows[0].cells[i].innerHTML = x.innerHTML;
             x.className += " w3-disabled";
             return true;
@@ -111,69 +110,55 @@ function loadString() {
     var str = "";
 
     for (i = 0; i < document.getElementById("bogglegame").rows[0].cells.length; i++) {
-        if (document.getElementById("bogglegame").rows[0].cells[i].innerHTML != "&nbsp;") {
-            str[i] = document.getElementById("bogglegame").rows[0].cells[i].innerHTML;
+        if (document.getElementById("bogglegame").rows[0].cells[i].innerHTML != "_") {
+            str += document.getElementById("bogglegame").rows[0].cells[i].innerHTML;
         }
     }
-
+    
     return str;
 }
 
 // Clears top cells back to blank
 function clearTopCells() {
     for (i = 0; i < document.getElementById("bogglegame").rows[0].cells.length; i++) {
-        document.getElementById("bogglegame").rows[0].cells[i].innerHTML = "&nbsp;";
+        document.getElementById("bogglegame").rows[0].cells[i].innerHTML = "_";
     }
 }
 
 // Re-enables bottom cells, loads top row cells that aren't empty into a string var, clears top row back to &nbsp;
 function submitWord() {
+    if (!isPlaying)
+        return false;
+
     enableDisabled();
-    subWords.push(loadString());
+    checkWord(loadString());
     clearTopCells();
 }
 
-// Check submitted words against array of valid words
-function checkWords(x,y) {
-    var isMatch = false;
-
-    for (i = 0; i <= x.length; i++) {
-        isMatch = false;
-        for (k = 1; k <= y.length; k++) {
-            if (y[k] == x[i]) {
-                isMatch = true;
-                score++;
-                goodWords.push(x[i]);
-            }
+//Checks word passed against word list and adds it to the proper list
+function checkWord(x) {
+    for (i = 1; i < words.length; i++) {
+        if (x == words[i].toUpperCase()) {
+            words[i] = "0";
+            document.getElementById("goodwords").innerHTML += "<p>" + x + "</p>";
+            score++;
+            displayScore();
+            return true;
         }
-        if (!isMatch)
-            badWords.push(x[i]);
     }
+    document.getElementById("badwords").innerHTML += "<p>" + x + "</p>";
+    return false;
 }
 
 //Collection of functions that occur when game ends
 function endGame() {
-    checkWords(subWords, words);
+    submitWord();
     displayScore();
-    displayGoodBadWords();
+
+    alert("GAME OVER!\n\nYour Final Score was " + score + " out of " + (words.length-1) +"!")
 }
 
 // Simply display score in the score location
 function displayScore() {
     document.getElementById("score").innerHTML = score;
-}
-
-//Display good words on left and bad words on right;
-function displayGoodBadWords() {
-    var x = document.getElementById("goodwords");
-    var y = document.getElementById("badwords");
-
-    x.innerHTML = goodWords;
-
-    for (i = 0; i <= goodWords.length; i++) {
-        //x.innerHTML += "<p>" + goodWords[i] + "</p>";
-    }
-    for (i = 0; i <= badWords.length; i++) {
-        y.innerHTML += "<p>" + badWords[i] + "</p>";
-    }
 }
