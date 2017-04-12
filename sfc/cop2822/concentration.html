@@ -12,13 +12,8 @@
         html, body, h1, h2, h3, h4, h5, h6 {
             font-family: "Roboto", sans-serif
         }
-
-        #myFooter {
-            width:100%;
-            position: absolute;
-            bottom: 0;
-        }
     </style>
+    <script src="concentration.js"></script>
 </head>
 <body>
 
@@ -41,7 +36,8 @@
         <h4 class="w3-bar-item"><b>Awesome Games</b></h4>
         <a class="w3-bar-item w3-button w3-hover-black" href="greg_maze.html">The Dark Dungeon</a>
         <a class="w3-bar-item w3-button w3-hover-black" href="greg_boggle.html">Boggle</a>
-        <a class="w3-bar-item w3-button w3-hover-black" href="concentration.html">Concentration <span class="w3-tag w3-teal w3-round">New!</span></a>
+        <a class="w3-bar-item w3-button w3-hover-black w3-grey" href="concentration.html">Concentration <span class="w3-tag w3-teal w3-round">New!</span></a>
+
     </nav>
 
     <!-- Overlay effect when opening sidebar on small screens -->
@@ -50,30 +46,43 @@
     <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
     <div class="w3-main" style="margin-left:250px">
 
-        <div class="w3-row w3-padding-64">
-            <div class="w3-twothird w3-container">
-                <h1 class="w3-text-teal">Games for Everyone</h1>
-                <p>This is a website made for hosting a variety of games made for my first Javascript programming course at Santa Fe College.</p>
-                <p>Select a game to the left to check them out. </p>
+        <div id="game" class="w3-margin-left w3-margin-right w3-padding-64 w3-center">
+
+            <div id="title">
+                <h3>Welcome to</h3>
+                <b class="w3-xxxlarge w3-bold w3-round w3-bottombar w3-blue w3-badge">Concentration</b>
+                <hr />
             </div>
-            <div class="w3-third w3-container">
-                <img src="images/superhero.jpg" alt="superhero" />
-                <!-- <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-                <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p> -->
+            <div id="start" class="w3-margin-bottom">
+                <div id="difficulty" class="w3-margin-bottom">
+                    <button id="easybut" class="w3-button w3-round-xlarge w3-xlarge w3-border" onclick="chooseDifficulty(this, SIZE_E);">Easy</button>
+                    <button id="normalbut" class="w3-button w3-round-xlarge w3-xlarge w3-border" onclick="chooseDifficulty(this, SIZE_N);">Normal</button>
+                    <button id="hardbut" class="w3-button w3-round-xlarge w3-xlarge w3-border" onclick="chooseDifficulty(this, SIZE_H);">Hard</button>
+                </div>
+                <br />
+                <button id="startbut" class="w3-button w3-round-xlarge w3-xlarge w3-black w3-disabled" onclick="">Start Game</button>
+                <br />
+                <span id="timer" class="w3-tag w3-teal w3-xlarge">120</span>
             </div>
+
+            <div id="board" align="center">
+                <table id="table" class="w3-table-all w3-centered"></table>
+            </div>
+
+            
+            <hr />
+            <div id="rules" class="w3-margin">
+                <h3 class="w3-bold">How to Play:</h3>
+                <p>Select a Difficulty level: Easy, Normal, or Hard</p>
+                <p>You will be given a time limit and must flip cards over two at a time to find matches.</p>
+                <p>If two cards don't match, they get flipped back over and you can try a different two.</p>
+                <p>Your score is determined based on time remaining and number of tries.</p>
+                <p></p>
+            </div>
+
+
         </div>
 
-        <!-- Pagination 
-        <div class="w3-center w3-padding-32">
-            <div class="w3-bar">
-                <a class="w3-button w3-black" href="#">1</a>
-                <a class="w3-button w3-hover-black" href="#">2</a>
-                <a class="w3-button w3-hover-black" href="#">3</a>
-                <a class="w3-button w3-hover-black" href="#">4</a>
-                <a class="w3-button w3-hover-black" href="#">5</a>
-                <a class="w3-button w3-hover-black" href="#">»</a>
-            </div>
-        </div>-->
 
         <footer id="myFooter">
             <div class="w3-container w3-theme-l2 w3-padding-32">
