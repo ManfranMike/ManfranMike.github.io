@@ -1,6 +1,7 @@
 ﻿//GLOBAL CONSTANTS
     //Card styles
 var BACK = '<img src="images/concentration/0.svg"></img>',
+    BACK_SRC = "images/concentration/0.svg";
     CARD_STYLE = "w3-hover-grey w3-border";
     //Difficulty Constants
 var SIZE_E = 4,
@@ -14,9 +15,17 @@ var i, k, temp;
 var isPlaying = false,
     isDone = false,
     t = 119,
-    refID;
+    refID,
+    j;
+    //Game specific stuff
 var difSize;
 var f;
+var isRevealed = false,
+    isChecking = false;
+var r_temp;
+var m = 0,  //Match counter
+    a = 0,  //Attempt counter
+    score = 0;  //Score container
 
 //OBJECTS
 function FateDeck() {
@@ -70,14 +79,15 @@ function chooseDifficulty(x, s) {  //x is the element that was clicked
 }
 
 // Starts interval on first presses, stops on second, and refreshes page on third.
-function startGame(s) {
+function startGame(x) {
+    j = x;
     if (isDone) {
         location.reload();
     }
     else if (isPlaying) {
         clearInterval(refID);
         endGame();
-        s.innerHTML = "Reset Game";
+        j.innerHTML = "Reset Game";
         isDone = true;
         isPlaying = false;
     }
@@ -89,12 +99,17 @@ function startGame(s) {
         f.setArray();
         loadTable(difSize);
         refID = setInterval(update, 1000);
-        s.innerHTML = "Quit Game";
+        j.innerHTML = "Quit Game";
     }
 }
 
 // each function inside is called each time update is called. Countdown always happens last.
 function update() {
+    if (m >= (difSize * difSize / 2)) {
+        startGame(j);
+    }
+
+
     countdown();
 }
 
@@ -103,12 +118,14 @@ function countdown() {
     var timer = document.getElementById("timer");
     timer.innerHTML = t;
     if (t-- <= 0) {
-        startGame(s);
+        startGame(j);
     }
 }
 
 function endGame() {
+    score = Math.round(m * t / Math.floor(a / 2));
 
+    alert("GAME OVER!\n\nYour score: " + score + "\n\nYou got " + m + " matches with " + a + " failed attempts with " + t + " seconds left.");
 }
 
 function loadTable(size) {
@@ -133,7 +150,40 @@ function loadTable(size) {
 }
 
 function revealCard(x, row, col) {
-    x.children[0].src = "images/concentration/"+f.arr[row][col]+".svg";
+    if (isChecking)
+        return false;
+
+    if (!isRevealed) {
+        r_temp = x;
+        r_temp.children[0].src = "images/concentration/" + f.arr[row][col] + ".svg";
+        isRevealed = true;
+    }
+    else if (isRevealed) {
+        isChecking = true;
+        x.children[0].src = "images/concentration/" + f.arr[row][col] + ".svg";
+        checkMatch(x, r_temp);
+    }
+}
+
+function checkMatch(x, y) {
+    if (x.children[0].src == y.children[0].src) {
+        m++;
+        x.setAttribute("onclick", "");
+        y.setAttribute("onclick", "");
+        isRevealed = false;
+        isChecking = false;
+    }
+    else {
+        a++;
+        setTimeout(function () { hideCards(x.children[0], r_temp.children[0]); }, 1000);
+    }
+}
+
+function hideCards(x, y) {
+    x.src = BACK_SRC;
+    y.src = BACK_SRC;
+    isRevealed = false;
+    isChecking = false;
 }
 
 function shuffle(arr) {
