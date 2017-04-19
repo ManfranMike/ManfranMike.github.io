@@ -24,7 +24,6 @@
             <a href="../../index.html" class="w3-bar-item w3-button w3-theme-l1">MP</a>
             <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Home</a>
             <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white w3-disabled">About</a>
-            <a href="play_games.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Games Crypt</a>
         </div>
     </div>
 
@@ -34,6 +33,11 @@
             <i class="fa fa-remove"></i>
         </a>
         <h4 class="w3-bar-item"><b>Games List</b></h4>
+        <a class="w3-bar-item w3-button w3-hover-black" href="tales.html">Adventure</a>
+        <a class="w3-bar-item w3-button w3-hover-black" href="fortune2.html">Magic 8-Ball</a>
+        <a class="w3-bar-item w3-button w3-hover-black" href="encoder2.html">Message Encoder</a>
+        <a class="w3-bar-item w3-button w3-hover-black" href="ttt.html">Tic-Tac-Toe</a>
+        <a class="w3-bar-item w3-button w3-hover-black" href="dice.html">Rolling Dice</a>
         <a class="w3-bar-item w3-button w3-hover-black" href="maze.html">The Dark Dungeon</a>
         <a class="w3-bar-item w3-button w3-hover-black" href="boggle.html">Boggle</a>
         <a class="w3-bar-item w3-button w3-hover-black w3-grey" href="concentration.html">Concentration <span class="w3-tag w3-teal w3-round">New!</span></a>
@@ -49,26 +53,19 @@
 
             <div id="title">
                 <h3>Welcome to</h3>
-                <b class="w3-xxxlarge w3-bold w3-round w3-bottombar w3-indigo w3-badge">Concentration</b>
+                <b class="w3-xxxlarge w3-bold w3-round w3-bottombar w3-indigo w3-badge">Message Decoder</b>
                 <hr />
             </div>
             <div id="start" class="w3-margin-bottom">
-                <div id="difficulty" class="w3-margin-bottom">
-                    <button id="easybut" class="w3-button w3-round-xlarge w3-xlarge w3-border" onclick="chooseDifficulty(this, SIZE_E);">Easy</button>
-                    <button id="normalbut" class="w3-button w3-round-xlarge w3-xlarge w3-border" onclick="chooseDifficulty(this, SIZE_E);">Normal</button>
-                    <button id="hardbut" class="w3-button w3-round-xlarge w3-xlarge w3-border" onclick="chooseDifficulty(this, SIZE_E);">Hard</button>
-                </div>
-                <br />
                 <button id="startbut" class="w3-button w3-round-xlarge w3-xlarge w3-black w3-disabled" onclick="">Start Game</button>
                 <br />
-                <span id="timer" class="w3-tag w3-teal w3-xlarge">120</span>
             </div>
 
             <div id="board" align="center">
                 <table id="table" class="w3-table-all w3-centered"></table>
             </div>
 
-            
+
             <hr />
             <div id="rules" class="w3-margin">
                 <h3 class="w3-bold">How to Play:</h3>
@@ -98,28 +95,28 @@
     </div>
 
     <script>
-// Get the Sidebar
-var mySidebar = document.getElementById("mySidebar");
+        // Get the Sidebar
+        var mySidebar = document.getElementById("mySidebar");
 
-// Get the DIV with overlay effect
-var overlayBg = document.getElementById("myOverlay");
+        // Get the DIV with overlay effect
+        var overlayBg = document.getElementById("myOverlay");
 
-// Toggle between showing and hiding the sidebar, and add overlay effect
-function w3_open() {
-    if (mySidebar.style.display === 'block') {
-        mySidebar.style.display = 'none';
-        overlayBg.style.display = "none";
-    } else {
-        mySidebar.style.display = 'block';
-        overlayBg.style.display = "block";
-    }
-}
+        // Toggle between showing and hiding the sidebar, and add overlay effect
+        function w3_open() {
+            if (mySidebar.style.display === 'block') {
+                mySidebar.style.display = 'none';
+                overlayBg.style.display = "none";
+            } else {
+                mySidebar.style.display = 'block';
+                overlayBg.style.display = "block";
+            }
+        }
 
-// Close the sidebar with the close button
-function w3_close() {
-    mySidebar.style.display = "none";
-    overlayBg.style.display = "none";
-}
+        // Close the sidebar with the close button
+        function w3_close() {
+            mySidebar.style.display = "none";
+            overlayBg.style.display = "none";
+        }
     </script>
 
 </body>

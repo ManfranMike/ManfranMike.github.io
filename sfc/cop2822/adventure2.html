@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>MProvan - Javascript Games</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        html, body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Roboto", sans-serif
+        }
+        #ui {
+            width: 100%;
+            position: absolute;
+            bottom: 125px;
+        }
+        #myFooter {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+    <script src="concentration.js"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+            <a class="w3-bar-item w3-button w3-right w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+            <a href="../../index.html" class="w3-bar-item w3-button w3-theme-l1">MP</a>
+            <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Home</a>
+            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white w3-disabled">About</a>
+            <a href="play_games.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Games Crypt</a>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <nav class="w3-sidebar w3-bar-block w3-large w3-theme-l5 w3-animate-left" style="display:none;z-index:3;width:250px;margin-top:43px;" id="mySidebar">
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black" title="Close Menu">
+            <i class="fa fa-remove"></i>
+        </a>
+        <h4 class="w3-bar-item"><b>Games List</b></h4>
+        <a class="w3-bar-item w3-button w3-hover-black" href="maze.html">The Dark Dungeon</a>
+        <a class="w3-bar-item w3-button w3-hover-black" href="boggle.html">Boggle</a>
+        <a class="w3-bar-item w3-button w3-hover-black w3-grey" href="concentration.html">Concentration <span class="w3-tag w3-teal w3-round">New!</span></a>
+    </nav>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+    <!-- Main -->
+    <div class="w3-main">
+
+        <div id="game" class="w3-margin-left w3-margin-right w3-padding-64 w3-center">
+
+            
+
+
+        </div>
+
+        <div id="ui" class="w3-row">
+            <div id="leftcard" class="w3-col w3-card-4 w3-topbar w3-light-grey w3-padding-large" align="center" style="width:20%;">
+                <b>GO:</b>
+                <table class="w3-table w3-centered">
+                    <tr>
+                        <td class="w3-hover-grey w3-border w3-xlarge"><b>NW</b></td>
+                        <td class="w3-hover-grey w3-border w3-xlarge w3-white"><b>N</b></td>
+                        <td class="w3-hover-grey w3-border w3-xlarge"><b>NE</b></td>
+                    </tr>
+                    <tr>
+                        <td class="w3-hover-grey w3-border w3-xlarge w3-white"><b>W</b></td>
+                        <td class="w3-hover-grey w3-border w3-xlarge"><i class="fa fa-compass"></i></td>
+                        <td class="w3-hover-grey w3-border w3-xlarge w3-white"><b>E</b></td>
+                    </tr>
+                    <tr>
+                        <td class="w3-hover-grey w3-border w3-xlarge"><b>SW</b></td>
+                        <td class="w3-hover-grey w3-border w3-xlarge w3-white"><b>S</b></td>
+                        <td class="w3-hover-grey w3-border w3-xlarge"><b>SE</b></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="midcard" class="w3-col w3-card w3-leftbar w3-rightbar w3-topbar w3-padding-large" align="center" style="width:40%;">
+                <b>Actions:</b>
+                <table class="w3-table w3-centered">
+                    <tr>
+                        <td class="w3-hover-grey w3-border w3-large"><b>USE</b></td>
+                        <td class="w3-hover-grey w3-border w3-large"><b>TALK TO</b></td>
+                        <td class="w3-hover-grey w3-border w3-large"><b>LOOK AT</b></td>
+                    </tr>
+                    <tr>
+                        <td class="w3-hover-grey w3-border w3-large"><b>PICK UP</b></td>
+                        <td class="w3-hover-grey w3-border w3-large"><b>OPEN</b></td>
+                        <td class="w3-hover-grey w3-border w3-large"><b>PUSH</b></td>
+                    </tr>
+                    <tr>
+                        <td class="w3-hover-grey w3-border w3-large"><b>GIVE</b></td>
+                        <td class="w3-hover-grey w3-border w3-large"><b>CLOSE</b></td>
+                        <td class="w3-hover-grey w3-border w3-large"><b>PULL</b></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="rightcard" class="w3-col w3-card-4 w3-topbar w3-light-grey w3-padding-large" align="center" style="width:40%;">
+                <b>Inventory:</b>
+                <table class="w3-table w3-centered">
+                    <tr>
+                        <td class="w3-hover-grey w3-border w3-large"><b>&nbsp;</b></td>
+                        <td class="w3-hover-grey w3-border w3-large"><b>&nbsp;</b></td>
+                        <td class="w3-hover-grey w3-border w3-large"><b>&nbsp;</b></td>
+                    </tr>
+                    <tr>
+                        <td class="w3-hover-grey w3-border w3-large"><b>&nbsp;</b></td>
+                        <td class="w3-hover-grey w3-border w3-large"><b>&nbsp;</b></td>
+                        <td class="w3-hover-grey w3-border w3-large"><b>&nbsp;</b></td>
+                    </tr>
+                    <tr>
+                        <td class="w3-hover-grey w3-border w3-large"><b>&nbsp;</b></td>
+                        <td class="w3-hover-grey w3-border w3-large"><b>&nbsp;</b></td>
+                        <td class="w3-hover-grey w3-border w3-large"><b>&nbsp;</b></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <footer id="myFooter">
+            <div class="w3-center w3-dark-grey w3-padding-small">
+                <p>
+                    Copyright &copy; 2017 <a href="https://mprovan.com">Michael Provan</a> &nbsp;&nbsp;| &nbsp;
+                    Direct all inquiries to <a href="mailto:michael@mprovan.com">michael@mprovan.com</a>
+                </p>
+                <div class="w3-container w3-black">
+                    <p>Styles by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+                </div>
+            </div>
+
+            
+        </footer>
+
+        <!-- END MAIN -->
+    </div>
+
+    <script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+    </script>
+
+</body>
+</html>

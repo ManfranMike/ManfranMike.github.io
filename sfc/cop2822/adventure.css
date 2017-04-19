@@ -1,0 +1,22 @@
+﻿body {
+    font-family: 'Courier New';
+    color: green;
+    background-color: black;
+    padding-left:20%;
+    padding-right:20%;
+    padding-top: 10%;
+    padding-bottom: 20%;
+}
+input[type=text]{
+    width:70%;
+    border:none;
+    font-family:'Courier New';
+    color: green;
+    background-color: black;
+}
+input[type=button]{
+
+}
+#game{
+    height:50%;
+}
