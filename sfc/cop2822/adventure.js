@@ -7,8 +7,13 @@
 function look() {
     var text = "";
 
-    text += "// " + player.location.namae + " //<br />";
-    text += "&nbsp;" + player.location.desc + "";
+    for (var i = 0; i < player.items.length; i++) {
+        if (player.items[i].lit)
+            player.lit = true;
+    }
+
+    text += "// " + player.location.namae() + " //<br />";
+    text += "&nbsp;" + player.location.desc() + "";
 
     return text;
 }
@@ -30,12 +35,40 @@ function checkInventory() {
     return text;
 }
 
+function move(dir) {
+
+}
+
 function invalidCommand() {
     var text = "I'm sorry, I didn't understand that. Send HELP if you're stuck.";
     return text;
 }
 
 function help() {
-    var text = "Only LOOK and INVENTORY or ITEMS works currently... More to come!";
+    var text = "You can type a VERB or a VERB and a NOUN. ";
+    return text;
+}
+
+function examine(x) {
+    var text;
+    for (var i = 0; i < player.items.length; i++) {
+        if (player.items[i].id == x)
+            text = player.items[i].desc;
+    }
+
+    if (!text)
+        text = "You cannot see " + x + ".";
+    return text;
+}
+
+function use(x){
+    var text;
+    for (var i = 0; i < player.items.length; i++) {
+        if (player.items[i].id == x)
+            text = player.items[i].use();
+    }
+
+    if (!text)
+        text = "You cannot see " + x + ".";
     return text;
 }

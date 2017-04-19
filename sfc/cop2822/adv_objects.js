@@ -2,56 +2,70 @@
     this.namae = namae;
     this.desc = desc;
     this.items = items;
-
-    //Exits
-    /*this.nw = nw
-    this.n = n;
-    this.ne = ne;
-    this.w = w;
-    this.e = e;
-    this.sw = sw;
-    this.s = s;
-    this.se = se;*/
 }
 
-function Item(namae,desc) {
+function Item(id,namae,desc) {
+    this.id = id;
     this.namae = namae;
     this.desc = desc;
 }
 
-function Door() {
+function Door(desc,open,locked) {
+    this.desc = desc;
     this.isOpen = open;
     this.isLocked = locked;
+    this.status = function () {
+        var str;
+        if (this.isOpen)
+            str = "an open";
+        else
+            str = "a closed";
+        return str;
+    };
 }
 
 //ROOMS
 var darkRoom = new Room(
-    "A Dark Room",
-    "You can't see anything.",
-    []
-);
-
-var litRoom = new Room(
-    "A Lit Room",
     function () {
-        var str;
-        str = "You are in a small dimly lit room. The walls are made of stone.";
-        return str;
+        if (player.lit)
+            return "A Lit Room";
+        else
+            return "A Dark Room";
+    },
+    function () {
+        if (player.lit) {
+            var str = "You are in a small room. The walls are made of stone and there are no windows.";
+            str += " To the NORTH you can see a wooden door.";
+            return str;
+        }
+        else
+            return "You can't see anything.";
     },
     []
 );
 
-
 //ITEMS
 var lighter = new Item(
-    "a lighter",
+    "lighter",
+    "a wind-resistant lighter",
     "It has the letter 'G' etched into the metal casing."
 );
+lighter.lit = false;
+lighter.use = function () {
+    var text;
+    if (lighter.lit) {
+        text = "You shut the lighter. It's flame is extinguished.";
+        lighter.lit = false;
+    }
+    else {
+        text = "You flick the lighter open. It's flame flickers steadily.";
+        lighter.lit = true;
+    }
+    return text;
+};
 
 var compass = new Item(
+    "compass",
     "a compass",
     "It is pointing North."
 );
-
-//DOORS
-litRoom.door = new Door(false,true);
