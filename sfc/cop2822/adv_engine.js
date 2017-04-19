@@ -3,6 +3,7 @@
 
 function start() {
     setInterval(update, 500);
+    submitCommand("LOOK");
 }
 
 function update() {
@@ -33,7 +34,7 @@ function getKey(e) {
         input.innerText += " ";
     else if (keynum == 13) {    //If enter is pressed, send the input, then clear box
         document.getElementById("game").innerHTML += "<p>>" + input.innerText + "</p>";
-        submitCommand();
+        submitCommand(input.innerText);
         input.innerText = "";
     }
     else if (keynum >= 65 && keynum <= 90)  //letters are added to box
@@ -42,7 +43,21 @@ function getKey(e) {
         return false;   //everything else returns false
 }
 
-function submitCommand() {
-    moves++;
+function submitCommand(x) {
+    var game = document.getElementById("game");
 
+    moves++;
+    switch (x) {
+        case "LOOK":
+        case "L":
+            game.innerHTML += look();
+            break;
+        case "INVENTORY":
+        case "ITEMS":
+            game.innerHTML += checkInventory();
+            break;
+        default:
+            game.innerHTML += invalidCommand();
+            break;
+    }
 }

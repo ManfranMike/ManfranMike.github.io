@@ -1,0 +1,13 @@
+﻿Verbs:
+	Help
+		- List all Commands/Verbs
+	
+	Use
+		- Two part action, "USE <noun1> ON <noun2>"
+	Examine
+		- Show description of object
+	Search Room/Creature
+		- Show list of items in the room or on creature.
+	Give
+		- Two parter, "GIVE <noun1> TO <noun2>"
+	
