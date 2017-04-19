@@ -56,6 +56,9 @@ function submitCommand(x) {
         case "ITEMS":
             game.innerHTML += checkInventory();
             break;
+        case "HELP":
+            game.innerHTML += help();
+            break;
         default:
             game.innerHTML += invalidCommand();
             break;

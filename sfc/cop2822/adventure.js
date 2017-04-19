@@ -36,5 +36,6 @@ function invalidCommand() {
 }
 
 function help() {
-    var text = ""
+    var text = "Only LOOK and INVENTORY or ITEMS works currently... More to come!";
+    return text;
 }
