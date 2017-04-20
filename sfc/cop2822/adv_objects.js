@@ -43,8 +43,8 @@ var darkRoom = new Room("darkroom", "A Dark Room", "You can't see anything.");
 darkRoom.update = function () {
     if (player.lit) {
         this.namae = "A Lit Room";
-        this.desc = "You are in a small ROOM. The walls are made of slick metal and there are no windows.";
-        this.desc += " To the NORTH you can see a wooden DOOR."
+        this.desc = "You are in a small room. The walls are made of slick metal and there are no windows.";
+        this.desc += " To the north you can see a metal door."
         if (this.inventory.length > 0) {
             this.desc += " There is ";
             for (var i = 0; i < this.inventory.length; i++) {
