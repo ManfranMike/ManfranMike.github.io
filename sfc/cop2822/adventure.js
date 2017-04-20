@@ -9,7 +9,7 @@ function invalidCommand() {
 
 function help() {
     var str = "Try these commands:<br />";
-    str += "LOOK<br />INVENTORY<br />USE<br />TAKE<br />OPEN<br />HELP"
+    str += "LOOK<br />INVENTORY<br />EXAMINE<br />USE<br />TAKE<br />OPEN<br />HELP"
     return str;
 }
 
