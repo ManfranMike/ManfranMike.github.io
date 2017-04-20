@@ -1,43 +1,6 @@
-﻿var player = {
-    health: 100,
-    location: darkRoom,
-    items: [lighter]
-}
-
-function look() {
-    var text = "";
-
-    for (var i = 0; i < player.items.length; i++) {
-        if (player.items[i].lit)
-            player.lit = true;
-    }
-
-    text += "// " + player.location.namae() + " //<br />";
-    text += "&nbsp;" + player.location.desc() + "";
-
-    return text;
-}
-
-function checkInventory() {
-    var text = "";
-
-    if (player.items.length <= 0) {
-        text += "You are holding nothing</p>"
-        return text;
-    }
-
-    text += "You are holding " + player.items[0].namae;
-    for (var i = 1; i < player.items.length; i++) {
-        text += ", " + player.items[i].namae;
-    }
-
-    text += "";
-    return text;
-}
-
-function move(dir) {
-
-}
+﻿/*
+    All the functions that occur from the translated user input
+*/
 
 function invalidCommand() {
     var text = "I'm sorry, I didn't understand that. Send HELP if you're stuck.";
@@ -45,30 +8,104 @@ function invalidCommand() {
 }
 
 function help() {
-    var text = "You can type a VERB or a VERB and a NOUN. ";
-    return text;
+    var str = "Try these commands:<br />";
+    str += "LOOK<br />INVENTORY<br />USE<br />TAKE<br />OPEN<br />HELP"
+    return str;
+}
+
+function look() {
+    var str;
+
+    for (var i = 0; i < player.items.length; i++) {
+        if (player.items[i].lit)
+            player.lit = true;
+    }
+
+    player.location.update();
+    str = "// " + player.location.namae + " //<br />";
+    str += "&nbsp;" + player.location.desc;
+    return str;
+}
+
+function checkInventory() {
+    var str = "You are carrying ";
+
+    if (player.items.length <= 0) {
+        str += "nothing"
+        return str;
+    }
+
+    str += player.items[0].namae;
+    for (var i = 1; i < player.items.length; i++) {
+        str += ", " + player.items[i].namae;
+    }
+
+    str += ".";
+    return str;
+}
+
+function use(x) {
+    var str;
+    for (var i = 0; i < player.items.length; i++) {
+        if (player.items[i].id == x)
+            str = player.items[i].use();
+    }
+
+    if (!str)
+        str = "You cannot use " + x + ".";
+    return str;
 }
 
 function examine(x) {
-    var text;
+    var str;
+    if (x == "self")
+        return "It's you!";
+
     for (var i = 0; i < player.items.length; i++) {
         if (player.items[i].id == x)
-            text = player.items[i].desc;
+            str = player.items[i].examine();
+    }
+    if (!str) {
+        for (var i = 0; i < player.location.objects.length; i++) {
+            if (player.location.objects[i].id == x)
+                str = player.location.objects[i].examine();
+        }
     }
 
-    if (!text)
-        text = "You cannot see " + x + ".";
-    return text;
+    if (!str)
+        str = "You cannot see " + x + ".";
+    return str;
 }
 
-function use(x){
-    var text;
+function take(x) {
+    if (player.location.inventory.length <= 0)
+        return "There is nothing to take.";
+    for (var i = 0; i < player.location.inventory.length; i++) {
+        if (player.location.inventory[i].id == x) {
+            player.items.push(player.location.inventory[i]);
+            player.location.inventory.splice(i, 1);
+            return "You added the " + x + " to your inventory."
+        }
+        else
+            return "You can't do that.";
+    }
+}
+
+function openUp(x) {
+    var str;
     for (var i = 0; i < player.items.length; i++) {
         if (player.items[i].id == x)
-            text = player.items[i].use();
+            str = player.items[i].openUp();
+    }
+    if (!str) {
+        for (var i = 0; i < player.location.objects.length; i++) {
+            if (player.location.objects[i].id == x)
+                str = player.location.objects[i].openUp();
+        }
     }
 
-    if (!text)
-        text = "You cannot see " + x + ".";
-    return text;
+    if (!str)
+        str = "You can't open that.";
+
+    return str;
 }
