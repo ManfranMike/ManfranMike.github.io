@@ -32,6 +32,19 @@ function submitCommand(x) {
             return help();
         case "use":
             return use(command[1]);
+        case "north":
+        case "n":
+        case "south":
+        case "s":
+        case "west":
+        case "w":
+        case "east":
+        case "e":
+            command[1] = command[0];
+        case "go":
+            return go(command[1]);
+        case "drop":
+            return drop(command[1]);
         default:
             return invalidCommand();
     }

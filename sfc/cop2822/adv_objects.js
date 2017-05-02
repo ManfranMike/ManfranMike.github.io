@@ -48,9 +48,11 @@ darkRoom.update = function () {
         if (this.inventory.length > 0) {
             this.desc += " There is ";
             for (var i = 0; i < this.inventory.length; i++) {
-                this.desc += this.inventory[i].namae;
                 if (i > 0)
                     this.desc += ", ";
+                if (i == this.inventory.length - 1 && i != 0)
+                    this.desc += "and ";
+                this.desc += this.inventory[i].namae;
             }
             this.desc += " on the floor.";
         }
@@ -62,3 +64,11 @@ darkRoom.update = function () {
 };
 darkRoom.inventory = [compass];
 darkRoom.objects = [snakeDoor];
+
+var hallway = new Room("hallway", "A Hallway", "The walls are lined with plated metal. The area is illuminated by strips of light along the ceiling. The path extends north and south from here.");
+
+
+
+//CONNECTIONS
+darkRoom.north = hallway;
+hallway.south = darkRoom;

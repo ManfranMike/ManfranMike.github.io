@@ -5,8 +5,8 @@
 function gameObject(id, namae, desc) {
     this.id = id;        //Unique id for searching
     this.namae = namae;     //name for listing inventories
-    this.desc = desc;      //Description when examined
-
+    this.descbase = desc;
+    this.desc = this.descbase;   //Description when examined
     this.update;
 
 //USE (object)
@@ -71,6 +71,22 @@ function Room(id, namae, desc) {
     gameObject.call(this, id, namae, desc);
 
     this.inventory = [];
+    this.update = function () {
+        console.log("updated " + this.id);
+
+        this.desc = this.descbase;
+        if (this.inventory.length > 0) {
+            this.desc += " There is ";
+            for (var i = 0; i < this.inventory.length; i++) {
+                if (i > 0)
+                    this.desc += ", ";
+                if (i == this.inventory.length - 1 && i != 0)
+                    this.desc += "and ";
+                this.desc += this.inventory[i].namae;
+            }
+            this.desc += " on the floor.";
+        }
+    }
 
     this.load = function () {
         rooms.push(this);

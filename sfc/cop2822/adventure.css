@@ -2,14 +2,13 @@
     font-family: 'Courier New';
     color: green;
     background-color: black;
-    padding-left:20%;
-    padding-right:20%;
-    padding-top: 10%;
-    padding-bottom: 20%;
     font-weight: 900;
 }
-#game{
-    height:50%;
+#console {
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 10%;
+    padding-bottom: 20%;
 }
 #inputbar,p{
     font-weight: normal;

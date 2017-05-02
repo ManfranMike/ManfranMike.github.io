@@ -16,9 +16,12 @@ function help() {
 function look() {
     var str;
 
-    for (var i = 0; i < player.items.length; i++) {
-        if (player.items[i].lit)
+    console.log("updated2");
+    for (var i = 0; i < player.items.length || i < player.location.inventory.length; i++) {
+        if ((player.items[i] && player.items[i].lit) || (player.location.inventory[i] && player.location.inventory[i].lit))
             player.lit = true;
+        else
+            player.lit = false;
     }
 
     player.location.update();
@@ -84,11 +87,10 @@ function take(x) {
         if (player.location.inventory[i].id == x) {
             player.items.push(player.location.inventory[i]);
             player.location.inventory.splice(i, 1);
-            return "You added the " + x + " to your inventory."
+            return "You added the " + x + " to your inventory.";
         }
-        else
-            return "You can't do that.";
     }
+    return "You can't do that.";
 }
 
 function openUp(x) {
@@ -108,4 +110,44 @@ function openUp(x) {
         str = "You can't open that.";
 
     return str;
+}
+
+function go(x) {
+    var temp = player.location;
+
+    if (x.startsWith("n") && player.location.north != null)
+        player.location = player.location.north;
+    if (x.startsWith("s") && player.location.south != null)
+        player.location = player.location.south;
+    if (x.startsWith("w") && player.location.west != null)
+        player.location = player.location.west;
+    if (x.startsWith("e") && player.location.east != null)
+        player.location = player.location.east;
+
+    if (player.location == temp)
+        return "You cannot go that way.";
+    else
+        return look();
+}
+
+function drop(x) {
+    if (player.items.length <= 0)
+        return "You have nothing to drop.";
+    for (var i = 0; i < player.items.length; i++) {
+        if (player.items[i].id == x) {
+            player.location.inventory.push(player.items[i]);
+            player.items.splice(i, 1);
+            return "You dropped " + x + " onto the floor.";
+        }
+    }
+    return "You can't do that.";
+}
+
+function search(key, player, room, objects) {
+
+
+    for (var i = 0; i < player.items.length; i++) {
+        if (player.items[i].id == key)
+            return player.items[i];
+    }
 }
