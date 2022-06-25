@@ -55,5 +55,4 @@ var techcsv = `id,name,quantity,description,type,expansion
 
 var techbox = $.csv.toObjects(techcsv);
 
-console.log('test');
-console.log(JSON.stringify(techbox));
+console.log(techbox[0].id);
