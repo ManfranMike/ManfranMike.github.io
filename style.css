@@ -1,0 +1,16 @@
+.military{
+    background-image:linear-gradient(LightGray,#7b4f50);
+    margin: 8px 4px;
+}
+.grid{
+    background-image:linear-gradient(LightGray,#5c716c);
+    margin: 8px 4px;
+}
+.nano{
+    background-image:linear-gradient(LightGray,#836d46);
+    margin: 8px 4px;
+}
+.rare{
+    background-image:linear-gradient(LightGray,#7e718c);
+    margin: 8px 4px;
+}
