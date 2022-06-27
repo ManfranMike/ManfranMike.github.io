@@ -55,20 +55,27 @@ var techcsv = `id,name,quantity,description,type,expansion
 
 var techbox = $.csv.toObjects(techcsv);
 
+
+
 function loadTechs(){
     for (let i = 0, l = techbox.length; i<l; i++){
             //console.log(techbox[i].id,techbox[i].type);
             if (techbox[i].expansion == "2E"){continue;}
+            //if (techbox[i].type == "Rare"){continue;}
             
-            addTechSlot(techbox[i].id,techbox[i].type);
+            addTechSlot(techbox[i]);
         }
 }
 
-function addTechSlot(id,type){
-    console.log(id.concat(" ",type));
+function addTechSlot(tech){
+    let id = tech.id;
+    let type = tech.type;
+    
+    //console.log(id.concat(" ",type));
     
     const techDiv = document.createElement("div");
     techDiv.setAttribute("class",type.concat(" w3-round-large w3-col s1 w3-display-container tech"));
+    techDiv.setAttribute("status","inactive");
     
     const techImg = document.createElement("img");
     techImg.setAttribute("src","images/".concat(id,".png"));
@@ -82,9 +89,27 @@ function addTechSlot(id,type){
     rowDiv.appendChild(techDiv);
 }
 
-function createEmptyTray(){
-    g = document.createElement('div');
-    g.setAttribute("id","row1")
-    g.setAttribute("class","w3-row")
-    
+function on(id) {
+  document.getElementById(id).style.display = "block";
+}
+
+function off(id) {
+  document.getElementById(id).style.display = "none";
+}
+
+function makeActive(id) {
+  let tech = document.getElementById(id);
+  tech.src = "images/active/".concat(id,".png");
+  tech.setAttribute("onclick","makeInactive(".concat(id,")"));
+  tech.parentElement.setAttribute("status","active");
+  
+  
+  //on("infobox");
+}
+
+function makeInactive(id) {
+  let tech = document.getElementById(id);
+  tech.src = "images/".concat(id,".png");
+  tech.setAttribute("onclick","makeActive(".concat(id,")"));
+  tech.parentElement.setAttribute("status","inactive");
 }
