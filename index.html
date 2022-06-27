@@ -12,46 +12,181 @@
 </head>
 <body class="w3-black w3-margin">
 
+<div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+  <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+  <a href="#" onclick="loadTechs()" class="w3-bar-item w3-button w3-red">Load Techs</a>
+</div>
 
-<div class="w3-row">
-    <div class="military w3-round-large w3-col s1 w3-display-container">
-        <img src="images/0.png" alt="Neutron Bombs" class="w3-image">
-        <div class="w3-display-bottomleft w3-margin w3-badge w3-green">2</div>
+<button class="w3-button w3-gray w3-xlarge" onclick="w3_open()">☰</button>
+
+<div id="TechBoard" class="w3-blue">
+    <div id="Military" class="w3-row"></div>
+    <div id="Grid" class="w3-row"></div>
+    <div id="Nano" class="w3-row"></div>
+    <div id="Rare" class="w3-row"></div>
+</div>
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+
+<!--
+<div id="military" class="w3-row">
+    <div class="w3-round-large w3-col s1 w3-display-container">
         <i class="fa-solid fa-hourglass w3-display-bottomright w3-margin"></i>
+        <div class="w3-display-bottomleft w3-margin w3-badge w3-green">2</div>
+        <img src="images/0.png" alt="Neutron Bombs" class="w3-image">
     </div>
     
-    <div class="military w3-round-large w3-col s1 w3-display-container">
-        <img src="images/1.png" alt="Starbase" class="w3-image">
+    <div class="w3-round-large w3-col s1 w3-display-container">
+        <img src="images/active/1.png" alt="Starbase" class="w3-image">
         <div class="w3-display-bottomleft w3-margin w3-badge w3-green">5</div>
         <i class="fa-solid fa-hourglass w3-display-bottomright w3-margin"></i>
     </div>
     
-    <div class="military w3-round-large w3-col s1 w3-display-container">
+    <div class="w3-round-large w3-col s1 w3-display-container">
         <img src="images/2.png" alt="Neutron Bombs" class="w3-image">
         <div class="w3-display-bottomleft w3-margin w3-badge w3-green">5</div>
         <i class="fa-solid fa-hourglass w3-display-bottomright w3-margin"></i>
     </div>
 </div>
 
-<div class="w3-row">
-    <div class="grid w3-round-large w3-col s1 w3-display-container">
+<div id="grid" class="w3-row">
+    <div class="w3-round-large w3-col s1 w3-display-container">
         <img src="images/0.png" alt="Neutron Bombs" class="w3-image">
         <div class="w3-display-bottomleft w3-margin w3-badge w3-green">2</div>
         <i class="fa-solid fa-hourglass w3-display-bottomright w3-margin"></i>
     </div>
     
-    <div class="grid w3-round-large w3-col s1 w3-display-container">
+    <div class="w3-round-large w3-col s1 w3-display-container">
         <img src="images/1.png" alt="Starbase" class="w3-image">
         <div class="w3-display-bottomleft w3-margin w3-badge w3-green">5</div>
         <i class="fa-solid fa-hourglass w3-display-bottomright w3-margin"></i>
     </div>
     
-    <div class="grid w3-round-large w3-col s1 w3-display-container">
+    <div class="w3-round-large w3-col s1 w3-display-container">
         <img src="images/2.png" alt="Neutron Bombs" class="w3-image">
         <div class="w3-display-bottomleft w3-margin w3-badge w3-green">5</div>
         <i class="fa-solid fa-hourglass w3-display-bottomright w3-margin"></i>
     </div>
 </div>
+
+<div id="nano" class="w3-row">
+    <div class="w3-round-large w3-col s1 w3-display-container">
+        <img src="images/0.png" alt="Neutron Bombs" class="w3-image">
+        <div class="w3-display-bottomleft w3-margin w3-badge w3-green">2</div>
+        <i class="fa-solid fa-hourglass w3-display-bottomright w3-margin"></i>
+    </div>
+    
+    <div class="w3-round-large w3-col s1 w3-display-container">
+        <img src="images/1.png" alt="Starbase" class="w3-image">
+        <div class="w3-display-bottomleft w3-margin w3-badge w3-green">5</div>
+        <i class="fa-solid fa-hourglass w3-display-bottomright w3-margin"></i>
+    </div>
+    
+    <div class="w3-round-large w3-col s1 w3-display-container">
+        <img src="images/2.png" alt="Neutron Bombs" class="w3-image">
+        <div class="w3-display-bottomleft w3-margin w3-badge w3-green">5</div>
+        <i class="fa-solid fa-hourglass w3-display-bottomright w3-margin"></i>
+    </div>
+</div>
+
+<div id="rare" class="w3-row">
+    <div class="w3-round-large w3-col s1 w3-display-container">
+        <img src="images/0.png" alt="Neutron Bombs" class="w3-image">
+        <div class="w3-display-bottomleft w3-margin w3-badge w3-green">2</div>
+        <i class="fa-solid fa-hourglass w3-display-bottomright w3-margin"></i>
+    </div>
+    
+    <div class="w3-round-large w3-col s1 w3-display-container">
+        <img src="images/1.png" alt="Starbase" class="w3-image">
+        <div class="w3-display-bottomleft w3-margin w3-badge w3-green">5</div>
+        <i class="fa-solid fa-hourglass w3-display-bottomright w3-margin"></i>
+    </div>
+    
+    <div class="w3-round-large w3-col s1 w3-display-container">
+        <img src="images/2.png" alt="Neutron Bombs" class="w3-image">
+        <div class="w3-display-bottomleft w3-margin w3-badge w3-green">5</div>
+        <i class="fa-solid fa-hourglass w3-display-bottomright w3-margin"></i>
+    </div>
+</div>
+
+<div id="rare" class="w3-row">
+    <div class="w3-round-large w3-col s1 w3-display-container">
+        <img src="images/0.png" alt="Neutron Bombs" class="w3-image">
+        <div class="w3-display-bottomleft w3-margin w3-badge w3-green">2</div>
+        <i class="fa-solid fa-hourglass w3-display-bottomright w3-margin"></i>
+    </div>
+    
+    <div class="w3-round-large w3-col s1 w3-display-container">
+        <img src="images/1.png" alt="Starbase" class="w3-image">
+        <div class="w3-display-bottomleft w3-margin w3-badge w3-green">5</div>
+        <i class="fa-solid fa-hourglass w3-display-bottomright w3-margin"></i>
+    </div>
+    
+    <div class="w3-round-large w3-col s1 w3-display-container">
+        <img src="images/2.png" alt="Neutron Bombs" class="w3-image">
+        <div class="w3-display-bottomleft w3-margin w3-badge w3-green">5</div>
+        <i class="fa-solid fa-hourglass w3-display-bottomright w3-margin"></i>
+    </div>
+    
+    <div class="w3-round-large w3-col s1 w3-display-container">
+        <img src="images/3.png" alt="Neutron Bombs" class="w3-image">
+        <div class="w3-display-bottomleft w3-margin w3-badge w3-green">2</div>
+        <i class="fa-solid fa-hourglass w3-display-bottomright w3-margin"></i>
+    </div>
+    
+    <div class="w3-round-large w3-col s1 w3-display-container">
+        <img src="images/4.png" alt="Starbase" class="w3-image">
+        <div class="w3-display-bottomleft w3-margin w3-badge w3-green">5</div>
+        <i class="fa-solid fa-hourglass w3-display-bottomright w3-margin"></i>
+    </div>
+    
+    <div class="w3-round-large w3-col s1 w3-display-container">
+        <img src="images/5.png" alt="Neutron Bombs" class="w3-image">
+        <div class="w3-display-bottomleft w3-margin w3-badge w3-green">5</div>
+        <i class="fa-solid fa-hourglass w3-display-bottomright w3-margin"></i>
+    </div>
+    
+    <div class="w3-round-large w3-col s1 w3-display-container">
+        <img src="images/6.png" alt="Starbase" class="w3-image">
+        <div class="w3-display-bottomleft w3-margin w3-badge w3-green">5</div>
+        <i class="fa-solid fa-hourglass w3-display-bottomright w3-margin"></i>
+    </div>
+    
+    <div class="w3-round-large w3-col s1 w3-display-container">
+        <img src="images/7.png" alt="Neutron Bombs" class="w3-image">
+        <div class="w3-display-bottomleft w3-margin w3-badge w3-green">5</div>
+        <i class="fa-solid fa-hourglass w3-display-bottomright w3-margin"></i>
+    </div>
+</div>
+
+<div id="rare" class="w3-row">
+    <div class="w3-round-large w3-col s1 w3-display-container">
+        <img src="images/8.png" alt="Neutron Bombs" class="w3-image">
+        <div class="w3-display-bottomleft w3-margin w3-badge w3-green">2</div>
+        <i class="fa-solid fa-hourglass w3-display-bottomright w3-margin"></i>
+    </div>
+    
+    <div class="w3-round-large w3-col s1 w3-display-container">
+        <img src="images/1.png" alt="Starbase" class="w3-image">
+        <div class="w3-display-bottomleft w3-margin w3-badge w3-green">5</div>
+        <i class="fa-solid fa-hourglass w3-display-bottomright w3-margin"></i>
+    </div>
+    
+    <div class="w3-round-large w3-col s1 w3-display-container">
+        <img src="images/2.png" alt="Neutron Bombs" class="w3-image">
+        <div class="w3-display-bottomleft w3-margin w3-badge w3-green">5</div>
+        <i class="fa-solid fa-hourglass w3-display-bottomright w3-margin"></i>
+    </div>
+</div>
+-->
 
 </body>
 </html>

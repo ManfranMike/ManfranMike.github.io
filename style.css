@@ -1,16 +1,26 @@
-.military{
-    background-image:linear-gradient(LightGray,#7b4f50);
-    margin: 8px 4px;
+#TechBoard{
+    width:100%;
 }
-.grid{
-    background-image:linear-gradient(LightGray,#5c716c);
-    margin: 8px 4px;
+
+.tech:hover{
+    outline: 2px solid White;
 }
-.nano{
-    background-image:linear-gradient(LightGray,#836d46);
-    margin: 8px 4px;
+
+#TechBoard>div>div.tech{
+    width:12%;
+    margin: 0.25%;
 }
-.rare{
-    background-image:linear-gradient(LightGray,#7e718c);
-    margin: 8px 4px;
+
+#Rare .tech{
+    background-image:linear-gradient(DimGrey,#7e718c);
+}
+
+#Military .tech{
+    background-image:linear-gradient(DimGrey,#7b4f50);
+}
+#Grid .tech{
+    background-image:linear-gradient(DimGrey,#5c716c);
+}
+#Nano .tech{
+    background-image:linear-gradient(DimGrey,#836d46);
 }

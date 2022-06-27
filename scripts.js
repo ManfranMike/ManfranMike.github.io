@@ -55,4 +55,34 @@ var techcsv = `id,name,quantity,description,type,expansion
 
 var techbox = $.csv.toObjects(techcsv);
 
-console.log(techbox[0].id);
+function loadTechs(){
+    for (let i = 0, l = techbox.length; i<l; i++){
+            //console.log(techbox[i].id,techbox[i].type);
+            if (techbox[i].expansion == "2E"){continue;}
+            
+            addTechSlot(techbox[i].id,techbox[i].type);
+        }
+}
+
+function addTechSlot(id,type){
+    console.log(id.concat(" ",type));
+    
+    const techDiv = document.createElement("div");
+    techDiv.setAttribute("class",type.concat(" w3-round-large w3-col s1 w3-display-container tech"));
+    
+    const techImg = document.createElement("img");
+    techImg.setAttribute("src","images/".concat(id,".png"));
+    techImg.setAttribute("class","w3-image");
+    
+    techDiv.appendChild(techImg);
+    
+    const rowDiv = document.getElementById(type);
+    rowDiv.appendChild(techDiv);
+}
+
+function createEmptyTray(){
+    g = document.createElement('div');
+    g.setAttribute("id","row1")
+    g.setAttribute("class","w3-row")
+    
+}
