@@ -73,6 +73,8 @@ function addTechSlot(id,type){
     const techImg = document.createElement("img");
     techImg.setAttribute("src","images/".concat(id,".png"));
     techImg.setAttribute("class","w3-image");
+    techImg.setAttribute("id",id);
+    techImg.setAttribute("onclick","makeActive(".concat(id,")"));
     
     techDiv.appendChild(techImg);
     
