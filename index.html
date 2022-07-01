@@ -5,25 +5,54 @@
 <link rel="stylesheet" href="style.css">
 <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="jquery.csv.js"></script>
-<script type="text/javascript" src="scripts.js"></script>
+
 <script src="https://kit.fontawesome.com/0574d14004.js" crossorigin="anonymous"></script>
 <title>Eclipse Tech Display</title>
 
 </head>
 <body class="w3-black">
 
-<div id="TechBoard">
-    <div id="Military" class="w3-row"></div>
-    <div id="Grid" class="w3-row"></div>
-    <div id="Nano" class="w3-row"></div>
-    <div id="Rare" class="w3-row"></div>
+<div id="StartMenu">
+    <div class="Options w3-card-4 w3-display-middle">
+        <div class="w3-container w3-green">
+          <h2>Eclipse Tech Board</h2>
+        </div>
+
+        <form class="w3-container">
+        
+            <div class="w3-margin slidecontainer">
+            <i class="fa-solid fa-user"></i> <span id="playerCountOutput"></span>
+            <input type="range" min="2" max="9" value="2" class="slider" id="playerCount">
+            </div>
+            
+            <div class="w3-left-align">
+                <input type="checkbox" id="2E S" name="is2Ebalance" value=1>
+                <label for="vehicle1"> Use 2E Tech Costs</label></br>
+                <input type="checkbox" id="PT" name="isPredict" value=1>
+                <label for="vehicle3"> Use Predictable Technologies</label></br>
+                <input type="checkbox" id="RotA" name="isRotA" value=1>
+                <label for="vehicle2"> Rise of the Ancients Techs</label></br>
+                <input type="checkbox" id="SotR" name="isSotR" value=1>
+                <label for="vehicle3"> Shadow of the Rift Techs</label></br>
+                <input type="checkbox" id="SP1" name="isTractorBeam" value=1>
+                <label for="vehicle1"> Tractor Beam</label></br>
+                <input type="checkbox" id="2E T" name="is2ENew" value=1>
+                <label for="vehicle2"> Improved Logistics & Pico Modulator</label></br>
+                <input type="checkbox" id="2E D" name="is2EDev" value=1>
+                <label for="vehicle3"> Warp Portal & Ancient Labs</label></br>
+            </div>
+        
+        </form>
+        <button id="startButton" class="w3-button w3-green w3-margin">Start Round 1</button>
+    </div>
 </div>
+
+
+<div id="TechBoard"></div>
 
 <div class="w3-center w3-bottom">
 <div class="w3-bar">
-  <i class="fa-solid fa-angles-left w3-bar-item w3-button w3-yellow"></i>
-  <i class="fa-solid fa-angles-right w3-bar-item w3-button w3-green" onclick="loadTechs()"></i>
-  <i class="fa-solid fa-gear w3-bar-item w3-button w3-gray"></i>
+  <i id="draw" class="fa-solid fa-angles-right w3-bar-item w3-button w3-green"></i>
 </div>
 </div>
 
@@ -31,7 +60,8 @@
     <div id="infotext">Test</div>
 </div>
 
-<script>loadTechs();</script>
+<script type="text/javascript" src="classes.js"></script>
+<script type="text/javascript" src="scripts.js"></script>
 
 <!--
 <div id="military" class="w3-row">
