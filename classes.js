@@ -83,13 +83,20 @@ class Tech {
         }
         
         if (this.isNext > 0){
+            this.div.style.display = 'block';
             this.divNext.style.display = 'block';
         } else {this.divNext.style.display = 'none';}
+        
+        // if (this.bought > 0){
+            // this.div.style.outline = '2px solid Red';
+            // this.divNext.style.display = 'block';
+        // } else {this.divNext.style.display = 'none';}
         
     }
     
     draw(n){this.qty += n;this.updateDiv();console.log("drawing",this.name);}
     buy(){this.bought += 1;this.updateDiv();console.log("bought",this.name);}
+    refund(){this.bought -= 1;this.updateDiv();console.log("bought",this.name);}
     predict(n){this.isNext += n;this.updateDiv();console.log("predicting",this.name);}
 }
 
@@ -112,22 +119,39 @@ class TechManager {
     get drawCount(){
         switch (this.playerCount){
             case 2:
+            case "2":
+                console.log("2 Players");
                 return [12,4];
             case 3:
+            case "3":
+                console.log("3 Players");
                 return [14,6];
             case 4:
+            case "4":
+                console.log("4 Players");
                 return [16,7];
             case 5:
+            case "5":
+                console.log("5 Players");
                 return [18,8];
             case 6:
+            case "6":
+                console.log("6 Players");
                 return [20,9];
             case 7:
+            case "7":
+                console.log("7 Players");
                 return [22,10];
             case 8:
+            case "8":
+                console.log("8 Players");
                 return [24,11];
             case 9:
+            case "9":
+                console.log("9 Players");
                 return [26,11];
             default:
+                console.log("2 Players");
                 return [12,4];
         }
     }
@@ -171,6 +195,7 @@ class TechManager {
             if (this.techbox[i].expansion == "2E D" && !is2EDev){console.log("Skip 2ed");continue;}
             
             let newTech = new Tech(this.techbox[i]);
+            if (this.playerCount > 6 && newTech.type != "Rare"){newTech.total += 1;console.log("Adding extra tiles for high player count");}
             techArray.push(newTech);
         }
         
@@ -237,7 +262,16 @@ class TechManager {
         
         for (var i = 0; i < bag.length; i++){
             var tech = bag[i];
-            if (tech.id == id){return tech.buy();}
+            if (tech.id == id && tech.bought < tech.qty){return tech.buy();}
+        }
+    }
+    
+    refundTech(id){
+        var bag = this.techBag;
+        
+        for (var i = 0; i < bag.length; i++){
+            var tech = bag[i];
+            if (tech.id == id && tech.bought > 0){return tech.refund();}
         }
     }
 }

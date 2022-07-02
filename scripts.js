@@ -83,6 +83,7 @@ output.innerHTML = slider.value; // Display the default slider value
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
   output.innerHTML = p = this.value;
+  console.log(p);
 }
 
 var drawButton = document.getElementById("draw");
@@ -100,6 +101,7 @@ var startMenu = document.getElementById("StartMenu");
 startButton.onclick = function(){
     if(confirm("Start the Game with these settings?")){
         startMenu.style.display = "none";
+        console.log(p);
         loadTechs();
     }
     return 1;
