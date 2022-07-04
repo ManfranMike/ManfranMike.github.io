@@ -181,6 +181,7 @@ class TechManager {
         let isTractorBeam = o[3];
         let is2ENew = o[4];
         let is2EDev = o[5];
+        let isNoRC = o[7];
         
         var techArray = [];
         
@@ -193,6 +194,7 @@ class TechManager {
             if (this.techbox[i].expansion == "SP1" && !isTractorBeam){console.log("Skip tb");continue;}
             if (this.techbox[i].expansion == "2E T" && !is2ENew){console.log("Skip 2en");continue;}
             if (this.techbox[i].expansion == "2E D" && !is2EDev){console.log("Skip 2ed");continue;}
+            if (this.techbox[i].name == "Rift Cannon" && isNoRC){console.log("Skip rc");continue;}
             
             let newTech = new Tech(this.techbox[i]);
             if (this.playerCount > 6 && newTech.type != "Rare"){newTech.total += 1;console.log("Adding extra tiles for high player count");}

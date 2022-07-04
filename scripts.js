@@ -57,7 +57,7 @@ var techObjects = $.csv.toObjects(techcsv);
 var TechBoard;
 
 var p = 5;
-var o = [0,0,0,0,0,0,0]
+var o = [0,0,0,0,0,0,0,0]
 
 function loadTechs(){
     TechBoard = new TechManager("TechBoard",techObjects,p,o);
@@ -114,6 +114,7 @@ var checkbox3 = document.getElementById("SP1");
 var checkbox4 = document.getElementById("2E T");
 var checkbox5 = document.getElementById("2E D");
 var checkbox6 = document.getElementById("PT");
+var checkbox7 = document.getElementById("RC");
 
 checkbox0.oninput = function(){
     if(this.checked){
@@ -162,6 +163,13 @@ checkbox6.oninput = function(){
         o[6] = this.value
     } else {o[6] = 0}
     console.log(o[6]);
+}
+
+checkbox7.oninput = function(){
+    if(this.checked){
+        o[7] = this.value
+    } else {o[7] = 0}
+    console.log(o[7]);
 }
 
 
