@@ -12,9 +12,19 @@ If you find any issues or have suggestions, feel free to add them to this repo o
 
 1. Go to [Manfranmike.github.io](https://manfranmike.github.io/)
 1. Select options you need and hit "Start Round 1"
-  2. If Predictable Technologies was selected, you need to press the Next Round button at the bottom to draw the first tiles.
+2. If Predictable Technologies was selected, you need to press the Next Round button at the bottom to draw the first tiles.
 3. Tap/Click on a technology with a quantity over zero to purchase it
 4. Tap/Blick the ">>" Next Round button to draw new tiles based on player count.
+5. Refreshing the page will delete all data and start the techboard over.
+
+## Settings Details
+- **Use 2E Tech Costs**: Uses the tech cost balancing from 2E (i.e, swapping Plasma Missles and Gluon Computer costs)
+- **Use Predictable Technologies**: This will use the variant for predicting technologies. Techs that will be drawn the next time you hit ">>" will have a yellow hourglass on them.
+- **Rise of the Ancients Techs**: Adds the tech from the first 1E expansion to the draw bag.
+- **Shadow of the Rift Techs**: Adds the tech from the second 1E expansion to the draw bag.
+- **Tractor Beam**:  Adds the Tractor Beam tech from the Ship Pack One 1E expansion to the draw bag.
+- **Improved Logistics & Pico Modulator**: Adds two new techs from base 2E to the draw bag.
+- **Warp Portal & Ancient Labs**: Adds two new techs from base 2E that used to be developments in 1E.
 
 ## Features
 - All 1E base and expansion techs
