@@ -14,7 +14,7 @@ If you find any issues or have suggestions, feel free to add them to this repo o
 1. Select options you need and hit "Start Round 1"
 2. If Predictable Technologies was selected, you need to press the Next Round button at the bottom to draw the first tiles.
 3. Tap/Click on a technology with a quantity over zero to purchase it
-4. Tap/Blick the ">>" Next Round button to draw new tiles based on player count.
+4. Tap/Click the ">>" Next Round button to draw new tiles based on player count.
 5. Refreshing the page will delete all data and start the techboard over.
 
 ## Settings Details
