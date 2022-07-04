@@ -25,6 +25,7 @@ If you find any issues or have suggestions, feel free to add them to this repo o
 - **Tractor Beam**:  Adds the Tractor Beam tech from the Ship Pack One 1E expansion to the draw bag.
 - **Improved Logistics & Pico Modulator**: Adds two new techs from base 2E to the draw bag.
 - **Warp Portal & Ancient Labs**: Adds two new techs from base 2E that used to be developments in 1E.
+- **No Rift Cannon**: Prevents Rift Cannon from being drawn despite other settings.
 
 ## Features
 - All 1E base and expansion techs
