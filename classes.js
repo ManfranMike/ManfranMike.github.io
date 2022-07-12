@@ -13,8 +13,10 @@ class Tech {
         
         this.div = document.createElement("div");
         this.divIMG = document.createElement("img");
-        this.divBadge = document.createElement("i");
+        this.divBadge = document.createElement("p");
         this.divNext = document.createElement("i");
+        this.textNode = document.createTextNode(0);
+        this.divBadge.appendChild(this.textNode);
         this.div.appendChild(this.divIMG);
         this.div.appendChild(this.divBadge);
         this.div.appendChild(this.divNext);
@@ -68,7 +70,9 @@ class Tech {
         //this.divIMG.setAttribute("onclick","");
         
         //let divBadge = document.createElement("i");
-        this.divBadge.setAttribute("class","fa-solid fa-".concat(this.quantity," w3-display-bottomleft w3-margin techBadge"));
+        this.divBadge.setAttribute("class","w3-display-bottomleft techBadge");
+        this.textNode.nodeValue = this.quantity;
+        
         
         this.divNext.setAttribute("class","fa-solid fa-hourglass w3-display-bottomright w3-margin");
         
